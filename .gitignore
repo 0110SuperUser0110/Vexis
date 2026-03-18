@@ -9,3 +9,20 @@ models/text/qwen3_8b/*
 
 # Keep folder placeholders
 !models/text/qwen3_8b/.gitkeep
+
+# Virtual environments
+env/
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS cache
+.vs/
+
+# Optional local test/output files
+*.wav
