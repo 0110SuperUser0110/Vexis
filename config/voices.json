@@ -1,0 +1,7 @@
+{
+  "backend": "piper",
+  "model_path": "E:\\VEXIS\\voices\\piper\\en_GB-alba-medium.onnx",
+  "config_path": "E:\\VEXIS\\voices\\piper\\en_GB-alba-medium.onnx.json",
+  "speaker": 0,
+  "use_cuda": false
+}

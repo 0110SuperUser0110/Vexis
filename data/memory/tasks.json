@@ -1,0 +1,98 @@
+[
+  {
+    "task_id": "task_1e9023d8d7f5",
+    "timestamp": "2026-03-17T18:56:21Z",
+    "title": "question: Why are you so slow?",
+    "description": "Why are you so slow?",
+    "status": "unresolved",
+    "priority": 1,
+    "related_input_id": "input_7f649ba65dd5",
+    "related_memory_id": "mem_61ad7b550fbd",
+    "metadata": {
+      "confidence": 0.97,
+      "classification": "question"
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T18:56:21Z",
+      "local_timestamp": "2026-03-17T13:56:21",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773773781.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 13,
+      "minute": 56,
+      "second": 21
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "task_system",
+      "session_id": "local_session",
+      "interaction_type": "task",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": false,
+      "expects_reasoning": false,
+      "personality_allowed": false,
+      "raw_length": 20
+    }
+  },
+  {
+    "task_id": "task_4a73ec9b37a5",
+    "timestamp": "2026-03-17T19:29:35Z",
+    "title": "question: Where is here?",
+    "description": "Where is here?",
+    "status": "unresolved",
+    "priority": 1,
+    "related_input_id": "input_16e3a383aa39",
+    "related_memory_id": "mem_25e698a001d8",
+    "metadata": {
+      "confidence": 0.76,
+      "classification": "question"
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T19:29:35Z",
+      "local_timestamp": "2026-03-17T14:29:35",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773775775.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 14,
+      "minute": 29,
+      "second": 35
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "task_system",
+      "session_id": "local_session",
+      "interaction_type": "task",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": false,
+      "expects_reasoning": false,
+      "personality_allowed": false,
+      "raw_length": 14
+    }
+  }
+]

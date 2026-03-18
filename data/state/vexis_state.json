@@ -1,0 +1,272 @@
+{
+  "lifecycle": {
+    "mode": "active",
+    "boot_count": 17,
+    "started_at": "2026-03-17T00:47:01Z",
+    "last_active_at": "2026-03-18T16:56:26Z"
+  },
+  "presence": {
+    "visual_state": "idle",
+    "status_text": "ready"
+  },
+  "speech": {
+    "is_speaking": false,
+    "last_spoken_text": "",
+    "queue_length": 0
+  },
+  "cognition": {
+    "is_thinking": false,
+    "current_focus": "social response ready",
+    "current_input_id": "input_861d2145f4a3",
+    "last_classification": "social"
+  },
+  "ingest": {
+    "pending_files": [],
+    "processing_file": null,
+    "completed_files": []
+  },
+  "memory": {
+    "total_items": 3,
+    "last_memory_id": "mem_0894588eb705"
+  },
+  "tasks": {
+    "active_task_ids": [],
+    "unresolved_task_ids": [],
+    "completed_task_ids": []
+  },
+  "epistemic": {
+    "open_questions": [
+      "Where is here?"
+    ],
+    "open_claims": [],
+    "unsupported_claims": [],
+    "contradictions": []
+  },
+  "recent_inputs": [
+    {
+      "input_id": "input_a9e337cb084e",
+      "timestamp": "2026-03-17T00:47:10Z",
+      "source": "gui",
+      "raw_text": "hello vex",
+      "input_type": "note",
+      "confidence": 0.4,
+      "metadata": {
+        "reasons": [
+          "fallback_to_note_due_to_low_specificity"
+        ],
+        "features": {
+          "normalized_text": "hello vex",
+          "first_token": "hello",
+          "token_count": 2,
+          "ends_with_question_mark": false,
+          "contains_question_word": false,
+          "contains_command_starter": false,
+          "contains_claim_cue": false,
+          "contains_note_cue": false,
+          "starts_with_please": false,
+          "contains_imperative_verb": false
+        }
+      },
+      "time_context": {
+        "utc_timestamp": "2026-03-17T00:47:10Z",
+        "local_timestamp": "2026-03-16T19:47:10",
+        "timezone_name": "America/Chicago",
+        "utc_offset": "-05:00",
+        "unix_timestamp": 1773708430.0,
+        "day_of_week": "Monday",
+        "part_of_day": "evening",
+        "is_weekend": false,
+        "year": 2026,
+        "month": 3,
+        "day": 16,
+        "hour": 19,
+        "minute": 47,
+        "second": 10
+      },
+      "interaction_context": {}
+    },
+    {
+      "input_id": "input_94e813d295ff",
+      "timestamp": "2026-03-17T00:47:49Z",
+      "source": "gui",
+      "raw_text": "you seem to be faulting.",
+      "input_type": "note",
+      "confidence": 0.4,
+      "metadata": {
+        "reasons": [
+          "fallback_to_note_due_to_low_specificity"
+        ],
+        "features": {
+          "normalized_text": "you seem to be faulting.",
+          "first_token": "you",
+          "token_count": 5,
+          "ends_with_question_mark": false,
+          "contains_question_word": false,
+          "contains_command_starter": false,
+          "contains_claim_cue": false,
+          "contains_note_cue": false,
+          "starts_with_please": false,
+          "contains_imperative_verb": false
+        }
+      },
+      "time_context": {
+        "utc_timestamp": "2026-03-17T00:47:49Z",
+        "local_timestamp": "2026-03-16T19:47:49",
+        "timezone_name": "America/Chicago",
+        "utc_offset": "-05:00",
+        "unix_timestamp": 1773708469.0,
+        "day_of_week": "Monday",
+        "part_of_day": "evening",
+        "is_weekend": false,
+        "year": 2026,
+        "month": 3,
+        "day": 16,
+        "hour": 19,
+        "minute": 47,
+        "second": 49
+      },
+      "interaction_context": {}
+    },
+    {
+      "input_id": "input_50bcd97d3e13",
+      "timestamp": "2026-03-17T01:22:09Z",
+      "source": "gui",
+      "raw_text": "hello",
+      "input_type": "note",
+      "confidence": 0.4,
+      "metadata": {
+        "reasons": [
+          "fallback_to_note_due_to_low_specificity"
+        ],
+        "features": {
+          "normalized_text": "hello",
+          "first_token": "hello",
+          "token_count": 1,
+          "ends_with_question_mark": false,
+          "contains_question_word": false,
+          "contains_command_starter": false,
+          "contains_claim_cue": false,
+          "contains_note_cue": false,
+          "starts_with_please": false,
+          "contains_imperative_verb": false
+        }
+      },
+      "time_context": {
+        "utc_timestamp": "2026-03-17T01:22:09Z",
+        "local_timestamp": "2026-03-16T20:22:09",
+        "timezone_name": "America/Chicago",
+        "utc_offset": "-05:00",
+        "unix_timestamp": 1773710529.0,
+        "day_of_week": "Monday",
+        "part_of_day": "evening",
+        "is_weekend": false,
+        "year": 2026,
+        "month": 3,
+        "day": 16,
+        "hour": 20,
+        "minute": 22,
+        "second": 9
+      },
+      "interaction_context": {}
+    }
+  ],
+  "recent_memories": [
+    {
+      "memory_id": "mem_ee2c34cc7e11",
+      "timestamp": "2026-03-17T00:47:10Z",
+      "kind": "note",
+      "content": "hello vex",
+      "source": "gui",
+      "related_input_id": "input_a9e337cb084e",
+      "status": "active",
+      "metadata": {
+        "confidence": 0.4,
+        "reasons": [
+          "fallback_to_note_due_to_low_specificity"
+        ]
+      },
+      "time_context": {
+        "utc_timestamp": "2026-03-17T00:47:10Z",
+        "local_timestamp": "2026-03-16T19:47:10",
+        "timezone_name": "America/Chicago",
+        "utc_offset": "-05:00",
+        "unix_timestamp": 1773708430.0,
+        "day_of_week": "Monday",
+        "part_of_day": "evening",
+        "is_weekend": false,
+        "year": 2026,
+        "month": 3,
+        "day": 16,
+        "hour": 19,
+        "minute": 47,
+        "second": 10
+      },
+      "interaction_context": {}
+    },
+    {
+      "memory_id": "mem_d65d9c3aec0e",
+      "timestamp": "2026-03-17T00:47:49Z",
+      "kind": "note",
+      "content": "you seem to be faulting.",
+      "source": "gui",
+      "related_input_id": "input_94e813d295ff",
+      "status": "active",
+      "metadata": {
+        "confidence": 0.4,
+        "reasons": [
+          "fallback_to_note_due_to_low_specificity"
+        ]
+      },
+      "time_context": {
+        "utc_timestamp": "2026-03-17T00:47:49Z",
+        "local_timestamp": "2026-03-16T19:47:49",
+        "timezone_name": "America/Chicago",
+        "utc_offset": "-05:00",
+        "unix_timestamp": 1773708469.0,
+        "day_of_week": "Monday",
+        "part_of_day": "evening",
+        "is_weekend": false,
+        "year": 2026,
+        "month": 3,
+        "day": 16,
+        "hour": 19,
+        "minute": 47,
+        "second": 49
+      },
+      "interaction_context": {}
+    },
+    {
+      "memory_id": "mem_0894588eb705",
+      "timestamp": "2026-03-17T01:22:09Z",
+      "kind": "note",
+      "content": "hello",
+      "source": "gui",
+      "related_input_id": "input_50bcd97d3e13",
+      "status": "active",
+      "metadata": {
+        "confidence": 0.4,
+        "reasons": [
+          "fallback_to_note_due_to_low_specificity"
+        ]
+      },
+      "time_context": {
+        "utc_timestamp": "2026-03-17T01:22:09Z",
+        "local_timestamp": "2026-03-16T20:22:09",
+        "timezone_name": "America/Chicago",
+        "utc_offset": "-05:00",
+        "unix_timestamp": 1773710529.0,
+        "day_of_week": "Monday",
+        "part_of_day": "evening",
+        "is_weekend": false,
+        "year": 2026,
+        "month": 3,
+        "day": 16,
+        "hour": 20,
+        "minute": 22,
+        "second": 9
+      },
+      "interaction_context": {}
+    }
+  ],
+  "recent_tasks": []
+}

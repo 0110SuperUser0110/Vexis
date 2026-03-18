@@ -1,0 +1,11 @@
+# Ignore CUDA build contents
+bin/llama.cpp/*
+
+# Keep folder placeholders
+!bin/llama.cpp/.gitkeep
+
+# Ignore Qwen model contents
+models/text/qwen3_8b/*
+
+# Keep folder placeholders
+!models/text/qwen3_8b/.gitkeep

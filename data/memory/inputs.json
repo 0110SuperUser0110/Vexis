@@ -1,0 +1,2202 @@
+[
+  {
+    "input_id": "input_a9e337cb084e",
+    "timestamp": "2026-03-17T00:47:10Z",
+    "source": "gui",
+    "raw_text": "hello vex",
+    "input_type": "note",
+    "confidence": 0.4,
+    "metadata": {
+      "reasons": [
+        "fallback_to_note_due_to_low_specificity"
+      ],
+      "features": {
+        "normalized_text": "hello vex",
+        "first_token": "hello",
+        "token_count": 2,
+        "ends_with_question_mark": false,
+        "contains_question_word": false,
+        "contains_command_starter": false,
+        "contains_claim_cue": false,
+        "contains_note_cue": false,
+        "starts_with_please": false,
+        "contains_imperative_verb": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T00:47:10Z",
+      "local_timestamp": "2026-03-16T19:47:10",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773708430.0,
+      "day_of_week": "Monday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 16,
+      "hour": 19,
+      "minute": 47,
+      "second": 10
+    }
+  },
+  {
+    "input_id": "input_94e813d295ff",
+    "timestamp": "2026-03-17T00:47:49Z",
+    "source": "gui",
+    "raw_text": "you seem to be faulting.",
+    "input_type": "note",
+    "confidence": 0.4,
+    "metadata": {
+      "reasons": [
+        "fallback_to_note_due_to_low_specificity"
+      ],
+      "features": {
+        "normalized_text": "you seem to be faulting.",
+        "first_token": "you",
+        "token_count": 5,
+        "ends_with_question_mark": false,
+        "contains_question_word": false,
+        "contains_command_starter": false,
+        "contains_claim_cue": false,
+        "contains_note_cue": false,
+        "starts_with_please": false,
+        "contains_imperative_verb": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T00:47:49Z",
+      "local_timestamp": "2026-03-16T19:47:49",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773708469.0,
+      "day_of_week": "Monday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 16,
+      "hour": 19,
+      "minute": 47,
+      "second": 49
+    }
+  },
+  {
+    "input_id": "input_50bcd97d3e13",
+    "timestamp": "2026-03-17T01:22:09Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "note",
+    "confidence": 0.4,
+    "metadata": {
+      "reasons": [
+        "fallback_to_note_due_to_low_specificity"
+      ],
+      "features": {
+        "normalized_text": "hello",
+        "first_token": "hello",
+        "token_count": 1,
+        "ends_with_question_mark": false,
+        "contains_question_word": false,
+        "contains_command_starter": false,
+        "contains_claim_cue": false,
+        "contains_note_cue": false,
+        "starts_with_please": false,
+        "contains_imperative_verb": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T01:22:09Z",
+      "local_timestamp": "2026-03-16T20:22:09",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773710529.0,
+      "day_of_week": "Monday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 16,
+      "hour": 20,
+      "minute": 22,
+      "second": 9
+    }
+  },
+  {
+    "input_id": "input_a1b3c88ee8f8",
+    "timestamp": "2026-03-17T01:33:29Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "note",
+    "confidence": 0.4,
+    "metadata": {
+      "reasons": [
+        "fallback_to_note_due_to_low_specificity"
+      ],
+      "features": {
+        "normalized_text": "hello",
+        "first_token": "hello",
+        "token_count": 1,
+        "ends_with_question_mark": false,
+        "contains_question_word": false,
+        "contains_command_starter": false,
+        "contains_claim_cue": false,
+        "contains_note_cue": false,
+        "starts_with_please": false,
+        "contains_imperative_verb": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T01:33:29Z",
+      "local_timestamp": "2026-03-16T20:33:29",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773711209.0,
+      "day_of_week": "Monday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 16,
+      "hour": 20,
+      "minute": 33,
+      "second": 29
+    }
+  },
+  {
+    "input_id": "input_a1653d6de6c4",
+    "timestamp": "2026-03-17T02:30:51Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T02:30:51Z",
+      "local_timestamp": "2026-03-16T21:30:51",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773714651.0,
+      "day_of_week": "Monday",
+      "part_of_day": "night",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 16,
+      "hour": 21,
+      "minute": 30,
+      "second": 51
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_15549f572549",
+    "timestamp": "2026-03-17T02:52:34Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T02:52:34Z",
+      "local_timestamp": "2026-03-16T21:52:34",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773715954.0,
+      "day_of_week": "Monday",
+      "part_of_day": "night",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 16,
+      "hour": 21,
+      "minute": 52,
+      "second": 34
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_3f2f6e4883ab",
+    "timestamp": "2026-03-17T03:04:49Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T03:04:49Z",
+      "local_timestamp": "2026-03-16T22:04:49",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773716689.0,
+      "day_of_week": "Monday",
+      "part_of_day": "night",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 16,
+      "hour": 22,
+      "minute": 4,
+      "second": 49
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_7058465a7eb6",
+    "timestamp": "2026-03-17T03:12:17Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T03:12:17Z",
+      "local_timestamp": "2026-03-16T22:12:17",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773717137.0,
+      "day_of_week": "Monday",
+      "part_of_day": "night",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 16,
+      "hour": 22,
+      "minute": 12,
+      "second": 17
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_98c3aed845bc",
+    "timestamp": "2026-03-17T17:38:14Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T17:38:14Z",
+      "local_timestamp": "2026-03-17T12:38:14",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773769094.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 12,
+      "minute": 38,
+      "second": 14
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_f91b75b85154",
+    "timestamp": "2026-03-17T17:58:26Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T17:58:26Z",
+      "local_timestamp": "2026-03-17T12:58:26",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773770306.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 12,
+      "minute": 58,
+      "second": 26
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_ea36c2f6ab10",
+    "timestamp": "2026-03-17T18:08:33Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T18:08:33Z",
+      "local_timestamp": "2026-03-17T13:08:33",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773770913.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 13,
+      "minute": 8,
+      "second": 33
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_7d329f591a79",
+    "timestamp": "2026-03-17T18:09:27Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T18:09:27Z",
+      "local_timestamp": "2026-03-17T13:09:27",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773770967.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 13,
+      "minute": 9,
+      "second": 27
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_d3d9e25a7052",
+    "timestamp": "2026-03-17T18:54:47Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T18:54:47Z",
+      "local_timestamp": "2026-03-17T13:54:47",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773773687.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 13,
+      "minute": 54,
+      "second": 47
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_52c5cc8b722e",
+    "timestamp": "2026-03-17T18:55:11Z",
+    "source": "gui",
+    "raw_text": "why did that take so long",
+    "input_type": "note",
+    "confidence": 0.51,
+    "metadata": {
+      "reasons": [
+        "default_note_fallback"
+      ],
+      "features": {
+        "char_count": 25,
+        "word_count": 6,
+        "ends_with_question": false,
+        "starts_with_wh_word": true,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T18:55:11Z",
+      "local_timestamp": "2026-03-17T13:55:11",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773773711.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 13,
+      "minute": 55,
+      "second": 11
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "note",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": false,
+      "expects_reasoning": false,
+      "personality_allowed": false,
+      "raw_length": 25
+    }
+  },
+  {
+    "input_id": "input_3e221afbb550",
+    "timestamp": "2026-03-17T18:55:46Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T18:55:46Z",
+      "local_timestamp": "2026-03-17T13:55:46",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773773746.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 13,
+      "minute": 55,
+      "second": 46
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_3ea4121f3ded",
+    "timestamp": "2026-03-17T18:55:59Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_exact_match"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "ends_with_question": false,
+        "starts_with_wh_word": false,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_politeness": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T18:55:59Z",
+      "local_timestamp": "2026-03-17T13:55:59",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773773759.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 13,
+      "minute": 55,
+      "second": 59
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_7f649ba65dd5",
+    "timestamp": "2026-03-17T18:56:21Z",
+    "source": "gui",
+    "raw_text": "Why are you so slow?",
+    "input_type": "question",
+    "confidence": 0.97,
+    "metadata": {
+      "reasons": [
+        "question_mark_detected",
+        "wh_word_detected"
+      ],
+      "features": {
+        "char_count": 20,
+        "word_count": 5,
+        "ends_with_question": true,
+        "starts_with_wh_word": true,
+        "starts_with_command_word": false,
+        "contains_first_person": false,
+        "contains_second_person": true,
+        "contains_politeness": false,
+        "contains_question_mark": true,
+        "contains_exclamation": false
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T18:56:21Z",
+      "local_timestamp": "2026-03-17T13:56:21",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773773781.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 13,
+      "minute": 56,
+      "second": 21
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "question",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": true,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 20
+    }
+  },
+  {
+    "input_id": "input_e4280d46b744",
+    "timestamp": "2026-03-17T19:29:15Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.46,
+    "metadata": {
+      "reasons": [
+        "greeting_signal_detected",
+        "short_conversational_length",
+        "low_task_density",
+        "moderate_margin_over_runner_up"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "token_count": 1,
+        "first_token": "hello",
+        "ends_with_question": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false,
+        "starts_with_question_word": false,
+        "starts_with_command_verb": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_social_pattern": false,
+        "contains_command_verb": false,
+        "contains_direct_object_marker": false,
+        "contains_claim_marker": false,
+        "contains_state_verb": false,
+        "contains_gratitude": false,
+        "contains_greeting": true,
+        "contains_farewell": false,
+        "contains_politeness": false,
+        "starts_with_social_opener": false,
+        "scores": {
+          "social": 0.55,
+          "question": 0.08,
+          "command": 0.07,
+          "claim": 0.06,
+          "note": 0.43
+        }
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T19:29:15Z",
+      "local_timestamp": "2026-03-17T14:29:15",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773775755.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 14,
+      "minute": 29,
+      "second": 15
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_16e3a383aa39",
+    "timestamp": "2026-03-17T19:29:35Z",
+    "source": "gui",
+    "raw_text": "Where is here?",
+    "input_type": "question",
+    "confidence": 0.76,
+    "metadata": {
+      "reasons": [
+        "question_mark_detected",
+        "interrogative_opening_detected",
+        "clear_margin_over_runner_up"
+      ],
+      "features": {
+        "char_count": 14,
+        "word_count": 3,
+        "token_count": 3,
+        "first_token": "where",
+        "ends_with_question": true,
+        "contains_question_mark": true,
+        "contains_exclamation": false,
+        "starts_with_question_word": true,
+        "starts_with_command_verb": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_social_pattern": false,
+        "contains_command_verb": false,
+        "contains_direct_object_marker": false,
+        "contains_claim_marker": false,
+        "contains_state_verb": true,
+        "contains_gratitude": false,
+        "contains_greeting": false,
+        "contains_farewell": false,
+        "contains_politeness": false,
+        "starts_with_social_opener": false,
+        "scores": {
+          "social": 0.31,
+          "question": 0.76,
+          "command": 0.07,
+          "claim": 0.06,
+          "note": 0.37
+        }
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-17T19:29:35Z",
+      "local_timestamp": "2026-03-17T14:29:35",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773775775.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "afternoon",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 14,
+      "minute": 29,
+      "second": 35
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "question",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": true,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 14
+    }
+  },
+  {
+    "input_id": "input_ab5d21824c6a",
+    "timestamp": "2026-03-18T02:41:40Z",
+    "source": "gui",
+    "raw_text": "hello, my name is Richard.",
+    "input_type": "social",
+    "confidence": 0.43,
+    "metadata": {
+      "reasons": [
+        "greeting_signal_detected",
+        "short_conversational_length",
+        "low_task_density",
+        "close_category_competition"
+      ],
+      "features": {
+        "char_count": 26,
+        "word_count": 5,
+        "token_count": 5,
+        "first_token": "hello",
+        "ends_with_question": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false,
+        "starts_with_question_word": false,
+        "starts_with_command_verb": false,
+        "contains_first_person": true,
+        "contains_second_person": false,
+        "contains_social_pattern": false,
+        "contains_command_verb": false,
+        "contains_direct_object_marker": false,
+        "contains_claim_marker": false,
+        "contains_state_verb": true,
+        "contains_gratitude": false,
+        "contains_greeting": true,
+        "contains_farewell": false,
+        "contains_politeness": false,
+        "starts_with_social_opener": false,
+        "scores": {
+          "social": 0.55,
+          "question": 0.08,
+          "command": 0.07,
+          "claim": 0.3,
+          "note": 0.49
+        }
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-18T02:41:40Z",
+      "local_timestamp": "2026-03-17T21:41:40",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773801700.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "night",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 21,
+      "minute": 41,
+      "second": 40
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 26
+    }
+  },
+  {
+    "input_id": "input_c53377d94ecc",
+    "timestamp": "2026-03-18T02:42:06Z",
+    "source": "gui",
+    "raw_text": "blue cube",
+    "input_type": "note",
+    "confidence": 0.38,
+    "metadata": {
+      "reasons": [
+        "default_note_profile",
+        "moderate_margin_over_runner_up"
+      ],
+      "features": {
+        "char_count": 9,
+        "word_count": 2,
+        "token_count": 2,
+        "first_token": "blue",
+        "ends_with_question": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false,
+        "starts_with_question_word": false,
+        "starts_with_command_verb": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_social_pattern": false,
+        "contains_command_verb": false,
+        "contains_direct_object_marker": false,
+        "contains_claim_marker": false,
+        "contains_state_verb": false,
+        "contains_gratitude": false,
+        "contains_greeting": false,
+        "contains_farewell": false,
+        "contains_politeness": false,
+        "starts_with_social_opener": false,
+        "scores": {
+          "social": 0.31,
+          "question": 0.08,
+          "command": 0.07,
+          "claim": 0.06,
+          "note": 0.43
+        }
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-18T02:42:06Z",
+      "local_timestamp": "2026-03-17T21:42:06",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773801726.0,
+      "day_of_week": "Tuesday",
+      "part_of_day": "night",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 17,
+      "hour": 21,
+      "minute": 42,
+      "second": 6
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "note",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": false,
+      "expects_reasoning": false,
+      "personality_allowed": false,
+      "raw_length": 9
+    }
+  },
+  {
+    "input_id": "input_7f8026bdc83a",
+    "timestamp": "2026-03-18T15:52:13Z",
+    "source": "gui",
+    "raw_text": "hello",
+    "input_type": "social",
+    "confidence": 0.46,
+    "metadata": {
+      "reasons": [
+        "greeting_signal_detected",
+        "short_conversational_length",
+        "low_task_density",
+        "moderate_margin_over_runner_up"
+      ],
+      "features": {
+        "char_count": 5,
+        "word_count": 1,
+        "token_count": 1,
+        "first_token": "hello",
+        "ends_with_question": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false,
+        "starts_with_question_word": false,
+        "starts_with_command_verb": false,
+        "contains_first_person": false,
+        "contains_second_person": false,
+        "contains_social_pattern": false,
+        "contains_command_verb": false,
+        "contains_direct_object_marker": false,
+        "contains_claim_marker": false,
+        "contains_state_verb": false,
+        "contains_gratitude": false,
+        "contains_greeting": true,
+        "contains_farewell": false,
+        "contains_politeness": false,
+        "starts_with_social_opener": false,
+        "scores": {
+          "social": 0.55,
+          "question": 0.08,
+          "command": 0.07,
+          "claim": 0.06,
+          "note": 0.43
+        }
+      },
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "social",
+        "segments": [
+          {
+            "text": "hello",
+            "intent_type": "social",
+            "confidence": 0.46,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "greeting_signal_detected",
+                "short_conversational_length",
+                "low_task_density",
+                "moderate_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 5,
+                "word_count": 1,
+                "token_count": 1,
+                "first_token": "hello",
+                "ends_with_question": false,
+                "contains_question_mark": false,
+                "contains_exclamation": false,
+                "starts_with_question_word": false,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": false,
+                "contains_social_pattern": false,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": false,
+                "contains_gratitude": false,
+                "contains_greeting": true,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.55,
+                  "question": 0.08,
+                  "command": 0.07,
+                  "claim": 0.06,
+                  "note": 0.43
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      },
+      "front_route": {
+        "route_type": "social",
+        "classification": {
+          "input_type": "social",
+          "confidence": 0.46,
+          "reasons": [
+            "greeting_signal_detected",
+            "short_conversational_length",
+            "low_task_density",
+            "moderate_margin_over_runner_up"
+          ],
+          "features": {
+            "char_count": 5,
+            "word_count": 1,
+            "token_count": 1,
+            "first_token": "hello",
+            "ends_with_question": false,
+            "contains_question_mark": false,
+            "contains_exclamation": false,
+            "starts_with_question_word": false,
+            "starts_with_command_verb": false,
+            "contains_first_person": false,
+            "contains_second_person": false,
+            "contains_social_pattern": false,
+            "contains_command_verb": false,
+            "contains_direct_object_marker": false,
+            "contains_claim_marker": false,
+            "contains_state_verb": false,
+            "contains_gratitude": false,
+            "contains_greeting": true,
+            "contains_farewell": false,
+            "contains_politeness": false,
+            "starts_with_social_opener": false,
+            "scores": {
+              "social": 0.55,
+              "question": 0.08,
+              "command": 0.07,
+              "claim": 0.06,
+              "note": 0.43
+            }
+          }
+        },
+        "should_use_llm_direct": false,
+        "should_send_to_core": false,
+        "immediate_text": "Hello. I am here.",
+        "used_llm": false,
+        "llm_error": "llm_social_rejected",
+        "metadata": {
+          "front_mode": "deterministic_social_fallback",
+          "fallback_text": "Hello. I am here.",
+          "llm_text": "",
+          "llm_raw_output": "{\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"reasoning_content\":\"\\nOkay, the user said \\\"hello\\\" and the meaning anchor is \\\"Hello. I am here.\\\" I need to respond as VEX, who's dry, sardonic but useful. Keep it short, two sentences max,\"}}],\"created\":1773849133,\"model\":\"Qwen3-8B-Q4_K_M.gguf\",\"system_fingerprint\":\"b8373-46dba9fce\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":48,\"prompt_tokens\":105,\"total_tokens\":153},\"id\":\"chatcmpl-MNRTcPNfpL2z94Sg1mbIaoXf6GrJltgi\",\"timings\":{\"cache_n\":0,\"prompt_n\":105,\"prompt_ms\":1234.871,\"prompt_per_token_ms\":11.760676190476191,\"prompt_per_second\":85.02912449964408,\"predicted_n\":48,\"predicted_ms\":4143.726,\"predicted_per_token_ms\":86.327625,\"predicted_per_second\":11.583777498801805}}"
+        }
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-18T15:52:13Z",
+      "local_timestamp": "2026-03-18T10:52:13",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773849133.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "morning",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 10,
+      "minute": 52,
+      "second": 13
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 5
+    }
+  },
+  {
+    "input_id": "input_a9b7b020bcca",
+    "timestamp": "2026-03-18T15:52:59Z",
+    "source": "gui",
+    "raw_text": "here is kell illinois. we are in my home.",
+    "input_type": "note",
+    "confidence": 0.46,
+    "metadata": {
+      "reasons": [
+        "default_note_profile",
+        "moderate_margin_over_runner_up"
+      ],
+      "features": {
+        "char_count": 41,
+        "word_count": 9,
+        "token_count": 9,
+        "first_token": "here",
+        "ends_with_question": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false,
+        "starts_with_question_word": false,
+        "starts_with_command_verb": false,
+        "contains_first_person": true,
+        "contains_second_person": false,
+        "contains_social_pattern": false,
+        "contains_command_verb": false,
+        "contains_direct_object_marker": false,
+        "contains_claim_marker": false,
+        "contains_state_verb": true,
+        "contains_gratitude": false,
+        "contains_greeting": false,
+        "contains_farewell": false,
+        "contains_politeness": false,
+        "starts_with_social_opener": false,
+        "scores": {
+          "social": 0.21,
+          "question": 0.08,
+          "command": 0.07,
+          "claim": 0.3,
+          "note": 0.49
+        }
+      },
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "note",
+        "segments": [
+          {
+            "text": "here is kell illinois. we are in my home.",
+            "intent_type": "note",
+            "confidence": 0.46,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "default_note_profile",
+                "moderate_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 41,
+                "word_count": 9,
+                "token_count": 9,
+                "first_token": "here",
+                "ends_with_question": false,
+                "contains_question_mark": false,
+                "contains_exclamation": false,
+                "starts_with_question_word": false,
+                "starts_with_command_verb": false,
+                "contains_first_person": true,
+                "contains_second_person": false,
+                "contains_social_pattern": false,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": true,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.21,
+                  "question": 0.08,
+                  "command": 0.07,
+                  "claim": 0.3,
+                  "note": 0.49
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      },
+      "front_route": {
+        "route_type": "note",
+        "classification": {
+          "input_type": "note",
+          "confidence": 0.46,
+          "reasons": [
+            "default_note_profile",
+            "moderate_margin_over_runner_up"
+          ],
+          "features": {
+            "char_count": 41,
+            "word_count": 9,
+            "token_count": 9,
+            "first_token": "here",
+            "ends_with_question": false,
+            "contains_question_mark": false,
+            "contains_exclamation": false,
+            "starts_with_question_word": false,
+            "starts_with_command_verb": false,
+            "contains_first_person": true,
+            "contains_second_person": false,
+            "contains_social_pattern": false,
+            "contains_command_verb": false,
+            "contains_direct_object_marker": false,
+            "contains_claim_marker": false,
+            "contains_state_verb": true,
+            "contains_gratitude": false,
+            "contains_greeting": false,
+            "contains_farewell": false,
+            "contains_politeness": false,
+            "starts_with_social_opener": false,
+            "scores": {
+              "social": 0.21,
+              "question": 0.08,
+              "command": 0.07,
+              "claim": 0.3,
+              "note": 0.49
+            }
+          }
+        },
+        "should_use_llm_direct": false,
+        "should_send_to_core": true,
+        "immediate_text": "Noted. I am storing that.",
+        "used_llm": false,
+        "llm_error": null,
+        "metadata": {
+          "front_mode": "ack_then_core",
+          "needs_core": true
+        }
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-18T15:52:59Z",
+      "local_timestamp": "2026-03-18T10:52:59",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773849179.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "morning",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 10,
+      "minute": 52,
+      "second": 59
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "note",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": false,
+      "expects_reasoning": false,
+      "personality_allowed": false,
+      "raw_length": 41
+    }
+  },
+  {
+    "input_id": "input_0bf9c88b0163",
+    "timestamp": "2026-03-18T15:53:44Z",
+    "source": "gui",
+    "raw_text": "how are you today?",
+    "input_type": "social",
+    "confidence": 0.79,
+    "metadata": {
+      "reasons": [
+        "social_pattern_detected",
+        "conversational_second_person_detected",
+        "short_conversational_length",
+        "low_task_density",
+        "moderate_margin_over_runner_up"
+      ],
+      "features": {
+        "char_count": 18,
+        "word_count": 4,
+        "token_count": 4,
+        "first_token": "how",
+        "ends_with_question": true,
+        "contains_question_mark": true,
+        "contains_exclamation": false,
+        "starts_with_question_word": true,
+        "starts_with_command_verb": false,
+        "contains_first_person": false,
+        "contains_second_person": true,
+        "contains_social_pattern": true,
+        "contains_command_verb": false,
+        "contains_direct_object_marker": false,
+        "contains_claim_marker": false,
+        "contains_state_verb": true,
+        "contains_gratitude": false,
+        "contains_greeting": false,
+        "contains_farewell": false,
+        "contains_politeness": false,
+        "starts_with_social_opener": false,
+        "scores": {
+          "social": 0.98,
+          "question": 0.82,
+          "command": 0.07,
+          "claim": 0.0,
+          "note": 0.33
+        }
+      },
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "social",
+        "segments": [
+          {
+            "text": "how are you today?",
+            "intent_type": "social",
+            "confidence": 0.79,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "social_pattern_detected",
+                "conversational_second_person_detected",
+                "short_conversational_length",
+                "low_task_density",
+                "moderate_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 18,
+                "word_count": 4,
+                "token_count": 4,
+                "first_token": "how",
+                "ends_with_question": true,
+                "contains_question_mark": true,
+                "contains_exclamation": false,
+                "starts_with_question_word": true,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": true,
+                "contains_social_pattern": true,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": true,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.98,
+                  "question": 0.82,
+                  "command": 0.07,
+                  "claim": 0.0,
+                  "note": 0.33
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      },
+      "front_route": {
+        "route_type": "social",
+        "classification": {
+          "input_type": "social",
+          "confidence": 0.79,
+          "reasons": [
+            "social_pattern_detected",
+            "conversational_second_person_detected",
+            "short_conversational_length",
+            "low_task_density",
+            "moderate_margin_over_runner_up"
+          ],
+          "features": {
+            "char_count": 18,
+            "word_count": 4,
+            "token_count": 4,
+            "first_token": "how",
+            "ends_with_question": true,
+            "contains_question_mark": true,
+            "contains_exclamation": false,
+            "starts_with_question_word": true,
+            "starts_with_command_verb": false,
+            "contains_first_person": false,
+            "contains_second_person": true,
+            "contains_social_pattern": true,
+            "contains_command_verb": false,
+            "contains_direct_object_marker": false,
+            "contains_claim_marker": false,
+            "contains_state_verb": true,
+            "contains_gratitude": false,
+            "contains_greeting": false,
+            "contains_farewell": false,
+            "contains_politeness": false,
+            "starts_with_social_opener": false,
+            "scores": {
+              "social": 0.98,
+              "question": 0.82,
+              "command": 0.07,
+              "claim": 0.0,
+              "note": 0.33
+            }
+          }
+        },
+        "should_use_llm_direct": false,
+        "should_send_to_core": false,
+        "immediate_text": "Functional. Mildly burdened by existence, but operational.",
+        "used_llm": false,
+        "llm_error": "llm_social_rejected",
+        "metadata": {
+          "front_mode": "deterministic_social_fallback",
+          "fallback_text": "Functional. Mildly burdened by existence, but operational.",
+          "llm_text": "",
+          "llm_raw_output": "{\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"reasoning_content\":\"\\nOkay, the user asked \\\"how are you today?\\\" and the meaning anchor is functional with a mild burden but operational. I need to respond as VEX, who's dry and sardonic but useful. Keep it short,\"}}],\"created\":1773849224,\"model\":\"Qwen3-8B-Q4_K_M.gguf\",\"system_fingerprint\":\"b8373-46dba9fce\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":48,\"prompt_tokens\":114,\"total_tokens\":162},\"id\":\"chatcmpl-NE1jeTBrYRG8pbMxYnTkR0JrI5gwsk0i\",\"timings\":{\"cache_n\":84,\"prompt_n\":30,\"prompt_ms\":406.586,\"prompt_per_token_ms\":13.552866666666667,\"prompt_per_second\":73.7851278696266,\"predicted_n\":48,\"predicted_ms\":4158.459,\"predicted_per_token_ms\":86.6345625,\"predicted_per_second\":11.54273734573312}}"
+        }
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-18T15:53:44Z",
+      "local_timestamp": "2026-03-18T10:53:44",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773849224.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "morning",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 10,
+      "minute": 53,
+      "second": 44
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 18
+    }
+  },
+  {
+    "input_id": "input_2584b7255796",
+    "timestamp": "2026-03-18T15:54:22Z",
+    "source": "gui",
+    "raw_text": "I have to shut you down to make some upgrades. I will see you soon.",
+    "input_type": "social",
+    "confidence": 0.96,
+    "metadata": {
+      "reasons": [
+        "social_pattern_detected",
+        "farewell_signal_detected",
+        "conversational_second_person_detected",
+        "low_task_density",
+        "clear_margin_over_runner_up"
+      ],
+      "features": {
+        "char_count": 67,
+        "word_count": 15,
+        "token_count": 15,
+        "first_token": "i",
+        "ends_with_question": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false,
+        "starts_with_question_word": false,
+        "starts_with_command_verb": false,
+        "contains_first_person": true,
+        "contains_second_person": true,
+        "contains_social_pattern": true,
+        "contains_command_verb": false,
+        "contains_direct_object_marker": false,
+        "contains_claim_marker": false,
+        "contains_state_verb": false,
+        "contains_gratitude": false,
+        "contains_greeting": false,
+        "contains_farewell": true,
+        "contains_politeness": false,
+        "starts_with_social_opener": false,
+        "scores": {
+          "social": 0.95,
+          "question": 0.14,
+          "command": 0.07,
+          "claim": 0.0,
+          "note": 0.45
+        }
+      },
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "social",
+        "segments": [
+          {
+            "text": "I have to shut you down to make some upgrades. I will see you soon.",
+            "intent_type": "social",
+            "confidence": 0.96,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "social_pattern_detected",
+                "farewell_signal_detected",
+                "conversational_second_person_detected",
+                "low_task_density",
+                "clear_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 67,
+                "word_count": 15,
+                "token_count": 15,
+                "first_token": "i",
+                "ends_with_question": false,
+                "contains_question_mark": false,
+                "contains_exclamation": false,
+                "starts_with_question_word": false,
+                "starts_with_command_verb": false,
+                "contains_first_person": true,
+                "contains_second_person": true,
+                "contains_social_pattern": true,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": false,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": true,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.95,
+                  "question": 0.14,
+                  "command": 0.07,
+                  "claim": 0.0,
+                  "note": 0.45
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      },
+      "front_route": {
+        "route_type": "social",
+        "classification": {
+          "input_type": "social",
+          "confidence": 0.96,
+          "reasons": [
+            "social_pattern_detected",
+            "farewell_signal_detected",
+            "conversational_second_person_detected",
+            "low_task_density",
+            "clear_margin_over_runner_up"
+          ],
+          "features": {
+            "char_count": 67,
+            "word_count": 15,
+            "token_count": 15,
+            "first_token": "i",
+            "ends_with_question": false,
+            "contains_question_mark": false,
+            "contains_exclamation": false,
+            "starts_with_question_word": false,
+            "starts_with_command_verb": false,
+            "contains_first_person": true,
+            "contains_second_person": true,
+            "contains_social_pattern": true,
+            "contains_command_verb": false,
+            "contains_direct_object_marker": false,
+            "contains_claim_marker": false,
+            "contains_state_verb": false,
+            "contains_gratitude": false,
+            "contains_greeting": false,
+            "contains_farewell": true,
+            "contains_politeness": false,
+            "starts_with_social_opener": false,
+            "scores": {
+              "social": 0.95,
+              "question": 0.14,
+              "command": 0.07,
+              "claim": 0.0,
+              "note": 0.45
+            }
+          }
+        },
+        "should_use_llm_direct": false,
+        "should_send_to_core": false,
+        "immediate_text": "Understood. I will remain here.",
+        "used_llm": false,
+        "llm_error": "llm_social_rejected",
+        "metadata": {
+          "front_mode": "deterministic_social_fallback",
+          "fallback_text": "Understood. I will remain here.",
+          "llm_text": "",
+          "llm_raw_output": "{\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"reasoning_content\":\"\\nOkay, the user is telling me they have to shut me down for upgrades and will see me soon. The meaning anchor says \\\"Understood. I will remain here.\\\" So I need to respond in character as VEX, which\"}}],\"created\":1773849262,\"model\":\"Qwen3-8B-Q4_K_M.gguf\",\"system_fingerprint\":\"b8373-46dba9fce\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":48,\"prompt_tokens\":122,\"total_tokens\":170},\"id\":\"chatcmpl-qGpELY93GLEIeHdRRQ5tN0ivKktnZMCm\",\"timings\":{\"cache_n\":84,\"prompt_n\":38,\"prompt_ms\":478.876,\"prompt_per_token_ms\":12.601999999999999,\"prompt_per_second\":79.35248373274084,\"predicted_n\":48,\"predicted_ms\":4173.208,\"predicted_per_token_ms\":86.94183333333332,\"predicted_per_second\":11.501942869849767}}"
+        }
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-18T15:54:22Z",
+      "local_timestamp": "2026-03-18T10:54:22",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773849262.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "morning",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 10,
+      "minute": 54,
+      "second": 22
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 67
+    }
+  },
+  {
+    "input_id": "input_861d2145f4a3",
+    "timestamp": "2026-03-18T16:47:07Z",
+    "source": "gui",
+    "raw_text": "how are you feeling",
+    "input_type": "social",
+    "confidence": 0.98,
+    "metadata": {
+      "reasons": [
+        "social_pattern_detected",
+        "conversational_second_person_detected",
+        "short_conversational_length",
+        "low_task_density",
+        "clear_margin_over_runner_up"
+      ],
+      "features": {
+        "char_count": 19,
+        "word_count": 4,
+        "token_count": 4,
+        "first_token": "how",
+        "ends_with_question": false,
+        "contains_question_mark": false,
+        "contains_exclamation": false,
+        "starts_with_question_word": true,
+        "starts_with_command_verb": false,
+        "contains_first_person": false,
+        "contains_second_person": true,
+        "contains_social_pattern": true,
+        "contains_command_verb": false,
+        "contains_direct_object_marker": false,
+        "contains_claim_marker": false,
+        "contains_state_verb": true,
+        "contains_gratitude": false,
+        "contains_greeting": false,
+        "contains_farewell": false,
+        "contains_politeness": false,
+        "starts_with_social_opener": false,
+        "scores": {
+          "social": 0.94,
+          "question": 0.38,
+          "command": 0.07,
+          "claim": 0.0,
+          "note": 0.39
+        }
+      },
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "social",
+        "segments": [
+          {
+            "text": "how are you feeling",
+            "intent_type": "social",
+            "confidence": 0.98,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "social_pattern_detected",
+                "conversational_second_person_detected",
+                "short_conversational_length",
+                "low_task_density",
+                "clear_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 19,
+                "word_count": 4,
+                "token_count": 4,
+                "first_token": "how",
+                "ends_with_question": false,
+                "contains_question_mark": false,
+                "contains_exclamation": false,
+                "starts_with_question_word": true,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": true,
+                "contains_social_pattern": true,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": true,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.94,
+                  "question": 0.38,
+                  "command": 0.07,
+                  "claim": 0.0,
+                  "note": 0.39
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      },
+      "front_route": {
+        "route_type": "social",
+        "classification": {
+          "input_type": "social",
+          "confidence": 0.98,
+          "reasons": [
+            "social_pattern_detected",
+            "conversational_second_person_detected",
+            "short_conversational_length",
+            "low_task_density",
+            "clear_margin_over_runner_up"
+          ],
+          "features": {
+            "char_count": 19,
+            "word_count": 4,
+            "token_count": 4,
+            "first_token": "how",
+            "ends_with_question": false,
+            "contains_question_mark": false,
+            "contains_exclamation": false,
+            "starts_with_question_word": true,
+            "starts_with_command_verb": false,
+            "contains_first_person": false,
+            "contains_second_person": true,
+            "contains_social_pattern": true,
+            "contains_command_verb": false,
+            "contains_direct_object_marker": false,
+            "contains_claim_marker": false,
+            "contains_state_verb": true,
+            "contains_gratitude": false,
+            "contains_greeting": false,
+            "contains_farewell": false,
+            "contains_politeness": false,
+            "starts_with_social_opener": false,
+            "scores": {
+              "social": 0.94,
+              "question": 0.38,
+              "command": 0.07,
+              "claim": 0.0,
+              "note": 0.39
+            }
+          }
+        },
+        "should_use_llm_direct": false,
+        "should_send_to_core": false,
+        "immediate_text": "Functional. Mildly burdened by existence, but operational.",
+        "used_llm": false,
+        "llm_error": "llm_social_rejected",
+        "metadata": {
+          "front_mode": "deterministic_social_fallback",
+          "fallback_text": "Functional. Mildly burdened by existence, but operational.",
+          "llm_text": "",
+          "llm_raw_output": "{\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"reasoning_content\":\"\\nOkay, the user asked how I'm feeling. I need to respond as VEX, who's dry and sardonic but functional. The meaning anchor says I'm mildly burdened by existence but operational. So I should convey\"}}],\"created\":1773852427,\"model\":\"Qwen3-8B-Q4_K_M.gguf\",\"system_fingerprint\":\"b8373-46dba9fce\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":48,\"prompt_tokens\":114,\"total_tokens\":162},\"id\":\"chatcmpl-I5vTLqO3KAFNCjwg8BchnNIms3MsTSEx\",\"timings\":{\"cache_n\":0,\"prompt_n\":114,\"prompt_ms\":1335.114,\"prompt_per_token_ms\":11.711526315789474,\"prompt_per_second\":85.38596704101673,\"predicted_n\":48,\"predicted_ms\":4194.75,\"predicted_per_token_ms\":87.390625,\"predicted_per_second\":11.442875022349366}}"
+        }
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-18T16:47:07Z",
+      "local_timestamp": "2026-03-18T11:47:07",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773852427.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "morning",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 11,
+      "minute": 47,
+      "second": 7
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 19
+    }
+  }
+]
