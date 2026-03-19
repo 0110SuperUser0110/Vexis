@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Any, Optional
 
 from core.context_builder import ContextBundle
 from core.front_router import FrontRouteResult
 from core.input_classifier import ClassificationResult
 from core.language_renderer import LanguageRenderer
 from core.mixed_intent_engine import MixedIntentResult
+ 
 from core.reasoning_engine import InternalAnswer, ReasoningEngine
 from core.schemas import InputRecord, MemoryRecord, TaskRecord, VexisState
 
@@ -47,7 +48,7 @@ class ResponseEngine:
         prefer_llm: bool = True,
         front_route: Optional[FrontRouteResult] = None,
         mixed_intent: Optional[MixedIntentResult] = None,
-        belief_records: Optional[list] = None,
+        belief_records: Optional[list[Any]] = None,
     ) -> ResponseBundle:
         internal_answer = self.reasoning_engine.reason(
             state=state,
@@ -68,6 +69,10 @@ class ResponseEngine:
                     and internal_answer.resolved
                     and len(internal_answer.facts) > 0
                 )
+                or (
+                    internal_answer.answer_type == "note_acknowledgement"
+                    and internal_answer.metadata.get("reasoning_source") == "fact_extractor"
+                )
             )
         )
 
@@ -87,6 +92,23 @@ class ResponseEngine:
             classification=classification,
             internal_answer=internal_answer,
         )
+
+        if internal_answer.metadata.get("reasoning_source") == "fact_extractor":
+            extracted = internal_answer.metadata.get("fact_extraction", {})
+            if extracted and extracted.get("success"):
+                epistemic_updates.setdefault("extracted_facts", [])
+                for fact in extracted.get("facts", []):
+                    subject = fact.get("subject", "")
+                    relation = fact.get("relation", "")
+                    value = fact.get("value", "")
+                    if subject and relation and value:
+                        epistemic_updates["extracted_facts"].append(f"{subject}|{relation}|{value}")
+
+        if internal_answer.metadata.get("reasoning_source") == "resolution_engine":
+            resolution = internal_answer.metadata.get("resolution", {})
+            if resolution.get("resolved") and resolution.get("should_store_resolution"):
+                epistemic_updates.setdefault("resolved_questions", [])
+                epistemic_updates["resolved_questions"].append(input_record.raw_text)
 
         return ResponseBundle(
             response_text=render_result.text,
@@ -111,16 +133,25 @@ class ResponseEngine:
         internal_answer: InternalAnswer,
     ) -> str:
         input_type = classification.input_type
+        source = internal_answer.metadata.get("reasoning_source")
 
         if input_type == "social":
             return "social response ready"
+
         if input_type == "question":
+            if source == "resolution_engine" and internal_answer.resolved:
+                return "question resolved"
             return "question resolved" if internal_answer.resolved else "question logged"
+
         if input_type == "claim":
             return "claim assessed" if internal_answer.resolved else "claim logged"
+
         if input_type == "command":
             return "command resolved" if internal_answer.resolved else "command pending"
+
         if input_type == "note":
+            if source == "fact_extractor":
+                return "note stored with extracted facts"
             return "note stored"
 
         return "ready"
@@ -141,7 +172,8 @@ class ResponseEngine:
             if not internal_answer.resolved:
                 updates["unsupported_claims"] = [input_record.raw_text]
 
-        if classification.input_type == "note" and "contradiction_engine" in internal_answer.grounding:
+        contradiction_result = internal_answer.metadata.get("contradiction_result")
+        if contradiction_result and contradiction_result.get("flagged_count", 0) > 0:
             updates["contradictions"] = [input_record.raw_text]
 
         return updates

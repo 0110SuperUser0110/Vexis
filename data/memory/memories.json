@@ -1507,5 +1507,1266 @@
       "personality_allowed": true,
       "raw_length": 19
     }
+  },
+  {
+    "memory_id": "mem_617f3e34ee8d",
+    "timestamp": "2026-03-19T01:07:54Z",
+    "kind": "social",
+    "content": "Good morning Vex",
+    "source": "gui",
+    "related_input_id": "input_2b6dd5e958f7",
+    "status": "active",
+    "metadata": {
+      "confidence": 0.99,
+      "reasons": [
+        "social_pattern_detected",
+        "greeting_signal_detected",
+        "short_conversational_length",
+        "low_task_density",
+        "clear_margin_over_runner_up"
+      ],
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "social",
+        "segments": [
+          {
+            "text": "Good morning Vex",
+            "intent_type": "social",
+            "confidence": 0.99,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "social_pattern_detected",
+                "greeting_signal_detected",
+                "short_conversational_length",
+                "low_task_density",
+                "clear_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 16,
+                "word_count": 3,
+                "token_count": 3,
+                "first_token": "good",
+                "ends_with_question": false,
+                "contains_question_mark": false,
+                "contains_exclamation": false,
+                "starts_with_question_word": false,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": false,
+                "contains_social_pattern": true,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": false,
+                "contains_gratitude": false,
+                "contains_greeting": true,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.98,
+                  "question": 0.14,
+                  "command": 0.07,
+                  "claim": 0.0,
+                  "note": 0.39
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:07:54Z",
+      "local_timestamp": "2026-03-18T20:07:54",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882474.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 7,
+      "second": 54
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 16
+    }
+  },
+  {
+    "memory_id": "mem_ef4c29291eda",
+    "timestamp": "2026-03-19T01:08:12Z",
+    "kind": "question",
+    "content": "where is here?",
+    "source": "gui",
+    "related_input_id": "input_d5f2834fe7e4",
+    "status": "active",
+    "metadata": {
+      "confidence": 0.76,
+      "reasons": [
+        "question_mark_detected",
+        "interrogative_opening_detected",
+        "clear_margin_over_runner_up"
+      ],
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "question",
+        "segments": [
+          {
+            "text": "where is here?",
+            "intent_type": "question",
+            "confidence": 0.76,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "question_mark_detected",
+                "interrogative_opening_detected",
+                "clear_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 14,
+                "word_count": 3,
+                "token_count": 3,
+                "first_token": "where",
+                "ends_with_question": true,
+                "contains_question_mark": true,
+                "contains_exclamation": false,
+                "starts_with_question_word": true,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": false,
+                "contains_social_pattern": false,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": true,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.31,
+                  "question": 0.76,
+                  "command": 0.07,
+                  "claim": 0.06,
+                  "note": 0.37
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:08:12Z",
+      "local_timestamp": "2026-03-18T20:08:12",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882492.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 8,
+      "second": 12
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "question",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": true,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 14
+    }
+  },
+  {
+    "memory_id": "mem_267524cd2dd6",
+    "timestamp": "2026-03-19T01:08:18Z",
+    "kind": "resolved_question",
+    "content": "where is here?",
+    "source": "resolution_engine",
+    "related_input_id": null,
+    "status": "resolved",
+    "metadata": {
+      "source_type": "internal_resolution"
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:08:18Z",
+      "local_timestamp": "2026-03-18T20:08:18",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882498.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 8,
+      "second": 18
+    },
+    "interaction_context": {
+      "speaker_role": "system",
+      "speaker_id": "vex_resolution_engine",
+      "source": "resolution_engine",
+      "session_id": "local_session",
+      "interaction_type": "resolved_question",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "thinking",
+      "cognitive_state_at_input": "thinking",
+      "importance": "high",
+      "store_as_evidence": true,
+      "expects_reply": false,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 14
+    }
+  },
+  {
+    "memory_id": "mem_beb5025e1b12",
+    "timestamp": "2026-03-19T01:08:36Z",
+    "kind": "question",
+    "content": "What are you?",
+    "source": "gui",
+    "related_input_id": "input_0ab1d207079b",
+    "status": "active",
+    "metadata": {
+      "confidence": 0.75,
+      "reasons": [
+        "question_mark_detected",
+        "interrogative_opening_detected",
+        "clear_margin_over_runner_up"
+      ],
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "question",
+        "segments": [
+          {
+            "text": "What are you?",
+            "intent_type": "question",
+            "confidence": 0.75,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "question_mark_detected",
+                "interrogative_opening_detected",
+                "clear_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 13,
+                "word_count": 3,
+                "token_count": 3,
+                "first_token": "what",
+                "ends_with_question": true,
+                "contains_question_mark": true,
+                "contains_exclamation": false,
+                "starts_with_question_word": true,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": true,
+                "contains_social_pattern": false,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": true,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.39,
+                  "question": 0.76,
+                  "command": 0.07,
+                  "claim": 0.06,
+                  "note": 0.37
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:08:36Z",
+      "local_timestamp": "2026-03-18T20:08:36",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882516.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 8,
+      "second": 36
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "question",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": true,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 13
+    }
+  },
+  {
+    "memory_id": "mem_c8b2894fc94d",
+    "timestamp": "2026-03-19T01:09:09Z",
+    "kind": "command",
+    "content": "Tell Richard the 5th to be quiet.",
+    "source": "gui",
+    "related_input_id": "input_e7a7efd3bb6a",
+    "status": "active",
+    "metadata": {
+      "confidence": 0.43,
+      "reasons": [
+        "imperative_opening_detected",
+        "task_verb_detected",
+        "moderate_margin_over_runner_up"
+      ],
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "command",
+        "segments": [
+          {
+            "text": "Tell Richard the 5th to be quiet.",
+            "intent_type": "command",
+            "confidence": 0.43,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "imperative_opening_detected",
+                "task_verb_detected",
+                "moderate_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 33,
+                "word_count": 7,
+                "token_count": 7,
+                "first_token": "tell",
+                "ends_with_question": false,
+                "contains_question_mark": false,
+                "contains_exclamation": false,
+                "starts_with_question_word": false,
+                "starts_with_command_verb": true,
+                "contains_first_person": false,
+                "contains_second_person": false,
+                "contains_social_pattern": false,
+                "contains_command_verb": true,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": false,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.15,
+                  "question": 0.0,
+                  "command": 0.53,
+                  "claim": 0.0,
+                  "note": 0.45
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:09:09Z",
+      "local_timestamp": "2026-03-18T20:09:09",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882549.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 9,
+      "second": 9
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "command",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": true,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 33
+    }
+  },
+  {
+    "memory_id": "mem_b26712765265",
+    "timestamp": "2026-03-19T01:09:37Z",
+    "kind": "question",
+    "content": "can you repeat what I tell you to?",
+    "source": "gui",
+    "related_input_id": "input_0652fdbfcbaa",
+    "status": "active",
+    "metadata": {
+      "confidence": 0.92,
+      "reasons": [
+        "question_mark_detected",
+        "interrogative_opening_detected",
+        "question_phrase_detected",
+        "clear_margin_over_runner_up"
+      ],
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "question",
+        "segments": [
+          {
+            "text": "can you repeat what I tell you to?",
+            "intent_type": "question",
+            "confidence": 0.92,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "question_mark_detected",
+                "interrogative_opening_detected",
+                "question_phrase_detected",
+                "clear_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 34,
+                "word_count": 8,
+                "token_count": 8,
+                "first_token": "can",
+                "ends_with_question": true,
+                "contains_question_mark": true,
+                "contains_exclamation": false,
+                "starts_with_question_word": true,
+                "starts_with_command_verb": false,
+                "contains_first_person": true,
+                "contains_second_person": true,
+                "contains_social_pattern": false,
+                "contains_command_verb": true,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": false,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.23,
+                  "question": 0.92,
+                  "command": 0.45,
+                  "claim": 0.0,
+                  "note": 0.43
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:09:37Z",
+      "local_timestamp": "2026-03-18T20:09:37",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882577.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 9,
+      "second": 37
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "question",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": true,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 34
+    }
+  },
+  {
+    "memory_id": "mem_22945ca14ff7",
+    "timestamp": "2026-03-19T01:10:08Z",
+    "kind": "question",
+    "content": "what color is your cube?",
+    "source": "gui",
+    "related_input_id": "input_5a265d66244e",
+    "status": "active",
+    "metadata": {
+      "confidence": 0.73,
+      "reasons": [
+        "question_mark_detected",
+        "interrogative_opening_detected",
+        "clear_margin_over_runner_up"
+      ],
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "question",
+        "segments": [
+          {
+            "text": "what color is your cube?",
+            "intent_type": "question",
+            "confidence": 0.73,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "question_mark_detected",
+                "interrogative_opening_detected",
+                "clear_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 24,
+                "word_count": 5,
+                "token_count": 5,
+                "first_token": "what",
+                "ends_with_question": true,
+                "contains_question_mark": true,
+                "contains_exclamation": false,
+                "starts_with_question_word": true,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": true,
+                "contains_social_pattern": false,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": true,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.39,
+                  "question": 0.76,
+                  "command": 0.07,
+                  "claim": 0.06,
+                  "note": 0.43
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:10:08Z",
+      "local_timestamp": "2026-03-18T20:10:08",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882608.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 10,
+      "second": 8
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "question",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": true,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 24
+    }
+  },
+  {
+    "memory_id": "mem_164ea23f8865",
+    "timestamp": "2026-03-19T01:10:30Z",
+    "kind": "note",
+    "content": "the cube which is your presence.",
+    "source": "gui",
+    "related_input_id": "input_18bc4091624b",
+    "status": "active",
+    "metadata": {
+      "confidence": 0.41,
+      "reasons": [
+        "default_note_profile",
+        "moderate_margin_over_runner_up"
+      ],
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "note",
+        "segments": [
+          {
+            "text": "the cube which is your presence.",
+            "intent_type": "note",
+            "confidence": 0.41,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "default_note_profile",
+                "moderate_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 32,
+                "word_count": 6,
+                "token_count": 6,
+                "first_token": "the",
+                "ends_with_question": false,
+                "contains_question_mark": false,
+                "contains_exclamation": false,
+                "starts_with_question_word": false,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": true,
+                "contains_social_pattern": false,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": true,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.39,
+                  "question": 0.08,
+                  "command": 0.07,
+                  "claim": 0.14,
+                  "note": 0.49
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:10:30Z",
+      "local_timestamp": "2026-03-18T20:10:30",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882630.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 10,
+      "second": 30
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "note",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": false,
+      "expects_reasoning": false,
+      "personality_allowed": false,
+      "raw_length": 32
+    }
+  },
+  {
+    "memory_id": "mem_99da553deca3",
+    "timestamp": "2026-03-19T01:10:34Z",
+    "kind": "fact",
+    "content": "vex running_on PRESENCE",
+    "source": "reasoning_engine",
+    "related_input_id": null,
+    "status": "active",
+    "metadata": {
+      "subject": "vex",
+      "relation": "running_on",
+      "value": "PRESENCE",
+      "source_type": "internal_extracted_fact"
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:10:34Z",
+      "local_timestamp": "2026-03-18T20:10:34",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882634.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 10,
+      "second": 34
+    },
+    "interaction_context": {
+      "speaker_role": "system",
+      "speaker_id": "vex_fact_store",
+      "source": "reasoning_engine",
+      "session_id": "local_session",
+      "interaction_type": "fact",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "thinking",
+      "cognitive_state_at_input": "thinking",
+      "importance": "high",
+      "store_as_evidence": true,
+      "expects_reply": false,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 23
+    }
+  },
+  {
+    "memory_id": "mem_b681c054592b",
+    "timestamp": "2026-03-19T01:10:34Z",
+    "kind": "fact",
+    "content": "which property your",
+    "source": "reasoning_engine",
+    "related_input_id": null,
+    "status": "active",
+    "metadata": {
+      "subject": "which",
+      "relation": "property",
+      "value": "your",
+      "source_type": "internal_extracted_fact"
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:10:34Z",
+      "local_timestamp": "2026-03-18T20:10:34",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882634.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 10,
+      "second": 34
+    },
+    "interaction_context": {
+      "speaker_role": "system",
+      "speaker_id": "vex_fact_store",
+      "source": "reasoning_engine",
+      "session_id": "local_session",
+      "interaction_type": "fact",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "thinking",
+      "cognitive_state_at_input": "thinking",
+      "importance": "high",
+      "store_as_evidence": true,
+      "expects_reply": false,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 19
+    }
+  },
+  {
+    "memory_id": "mem_0ba0cb144e40",
+    "timestamp": "2026-03-19T01:11:02Z",
+    "kind": "note",
+    "content": "what are the 5 possibilities",
+    "source": "gui",
+    "related_input_id": "input_1c2dfed5d5b1",
+    "status": "active",
+    "metadata": {
+      "confidence": 0.45,
+      "reasons": [
+        "default_note_profile",
+        "moderate_margin_over_runner_up"
+      ],
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "note",
+        "segments": [
+          {
+            "text": "what are the 5 possibilities",
+            "intent_type": "note",
+            "confidence": 0.45,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "default_note_profile",
+                "moderate_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 28,
+                "word_count": 5,
+                "token_count": 5,
+                "first_token": "what",
+                "ends_with_question": false,
+                "contains_question_mark": false,
+                "contains_exclamation": false,
+                "starts_with_question_word": true,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": false,
+                "contains_social_pattern": false,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": true,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.31,
+                  "question": 0.32,
+                  "command": 0.07,
+                  "claim": 0.14,
+                  "note": 0.49
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:11:02Z",
+      "local_timestamp": "2026-03-18T20:11:02",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882662.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 11,
+      "second": 2
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "note",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": false,
+      "expects_reasoning": false,
+      "personality_allowed": false,
+      "raw_length": 28
+    }
+  },
+  {
+    "memory_id": "mem_81d045dc9685",
+    "timestamp": "2026-03-19T01:11:32Z",
+    "kind": "question",
+    "content": "what is the meaning of life?",
+    "source": "gui",
+    "related_input_id": "input_2880db7c71fc",
+    "status": "active",
+    "metadata": {
+      "confidence": 0.73,
+      "reasons": [
+        "question_mark_detected",
+        "interrogative_opening_detected",
+        "clear_margin_over_runner_up"
+      ],
+      "mixed_intent": {
+        "is_mixed": false,
+        "dominant_intent": "question",
+        "segments": [
+          {
+            "text": "what is the meaning of life?",
+            "intent_type": "question",
+            "confidence": 0.73,
+            "role": "full_input",
+            "metadata": {
+              "classification_reasons": [
+                "question_mark_detected",
+                "interrogative_opening_detected",
+                "clear_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 28,
+                "word_count": 6,
+                "token_count": 6,
+                "first_token": "what",
+                "ends_with_question": true,
+                "contains_question_mark": true,
+                "contains_exclamation": false,
+                "starts_with_question_word": true,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": false,
+                "contains_social_pattern": false,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": true,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.31,
+                  "question": 0.76,
+                  "command": 0.07,
+                  "claim": 0.06,
+                  "note": 0.43
+                }
+              }
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": null,
+        "reasons": [
+          "single_clause_input"
+        ],
+        "metadata": {}
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:11:32Z",
+      "local_timestamp": "2026-03-18T20:11:32",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882692.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 11,
+      "second": 32
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "question",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": true,
+      "expects_reply": true,
+      "expects_reasoning": true,
+      "personality_allowed": false,
+      "raw_length": 28
+    }
+  },
+  {
+    "memory_id": "mem_7ceb3bf73844",
+    "timestamp": "2026-03-19T01:12:11Z",
+    "kind": "social",
+    "content": "i have to put you to sleep now, see you in a bit.",
+    "source": "gui",
+    "related_input_id": "input_69ea2ec1aa52",
+    "status": "active",
+    "metadata": {
+      "confidence": 0.96,
+      "reasons": [
+        "social_pattern_detected",
+        "farewell_signal_detected",
+        "conversational_second_person_detected",
+        "low_task_density",
+        "clear_margin_over_runner_up"
+      ],
+      "mixed_intent": {
+        "is_mixed": true,
+        "dominant_intent": "note",
+        "segments": [
+          {
+            "text": "i have to put you to sleep now",
+            "intent_type": "note",
+            "confidence": 0.46,
+            "role": "substantive_candidate",
+            "metadata": {
+              "classification_reasons": [
+                "default_note_profile",
+                "moderate_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 30,
+                "word_count": 8,
+                "token_count": 8,
+                "first_token": "i",
+                "ends_with_question": false,
+                "contains_question_mark": false,
+                "contains_exclamation": false,
+                "starts_with_question_word": false,
+                "starts_with_command_verb": false,
+                "contains_first_person": true,
+                "contains_second_person": true,
+                "contains_social_pattern": false,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": false,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": false,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.29,
+                  "question": 0.08,
+                  "command": 0.07,
+                  "claim": 0.06,
+                  "note": 0.49
+                }
+              },
+              "clause_index": 0
+            }
+          },
+          {
+            "text": "see you in a bit.",
+            "intent_type": "social",
+            "confidence": 0.99,
+            "role": "social_clause",
+            "metadata": {
+              "classification_reasons": [
+                "social_pattern_detected",
+                "farewell_signal_detected",
+                "conversational_second_person_detected",
+                "short_conversational_length",
+                "low_task_density",
+                "clear_margin_over_runner_up"
+              ],
+              "features": {
+                "char_count": 17,
+                "word_count": 5,
+                "token_count": 5,
+                "first_token": "see",
+                "ends_with_question": false,
+                "contains_question_mark": false,
+                "contains_exclamation": false,
+                "starts_with_question_word": false,
+                "starts_with_command_verb": false,
+                "contains_first_person": false,
+                "contains_second_person": true,
+                "contains_social_pattern": true,
+                "contains_command_verb": false,
+                "contains_direct_object_marker": false,
+                "contains_claim_marker": false,
+                "contains_state_verb": false,
+                "contains_gratitude": false,
+                "contains_greeting": false,
+                "contains_farewell": true,
+                "contains_politeness": false,
+                "starts_with_social_opener": false,
+                "scores": {
+                  "social": 0.98,
+                  "question": 0.14,
+                  "command": 0.07,
+                  "claim": 0.0,
+                  "note": 0.45
+                }
+              },
+              "clause_index": 1
+            }
+          }
+        ],
+        "social_preface": null,
+        "substantive_segment": "i have to put you to sleep now",
+        "reasons": [
+          "multi_intent_clauses_detected"
+        ],
+        "metadata": {
+          "clause_count": 2,
+          "intent_set": [
+            "note",
+            "social"
+          ]
+        }
+      }
+    },
+    "time_context": {
+      "utc_timestamp": "2026-03-19T01:12:11Z",
+      "local_timestamp": "2026-03-18T20:12:11",
+      "timezone_name": "America/Chicago",
+      "utc_offset": "-05:00",
+      "unix_timestamp": 1773882731.0,
+      "day_of_week": "Wednesday",
+      "part_of_day": "evening",
+      "is_weekend": false,
+      "year": 2026,
+      "month": 3,
+      "day": 18,
+      "hour": 20,
+      "minute": 12,
+      "second": 11
+    },
+    "interaction_context": {
+      "speaker_role": "user",
+      "speaker_id": "primary_user",
+      "source": "gui",
+      "session_id": "local_session",
+      "interaction_type": "social",
+      "social_subtype": null,
+      "device_label": "BIGFATBETTY",
+      "location_label": "local_desktop",
+      "presence_state_at_input": "idle",
+      "cognitive_state_at_input": "ready",
+      "importance": "normal",
+      "store_as_evidence": false,
+      "expects_reply": true,
+      "expects_reasoning": false,
+      "personality_allowed": true,
+      "raw_length": 49
+    }
   }
 ]

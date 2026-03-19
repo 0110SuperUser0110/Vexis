@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\core",
-    "\\interface",
-    "\\voices\\piper"
+    "\\interface"
   ],
-  "SelectedNode": "\\interface\\gui_main.py",
+  "SelectedNode": "\\core\\resolution_engine.py",
   "PreviewInSolutionExplorer": false
 }

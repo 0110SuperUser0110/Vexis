@@ -17,7 +17,6 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from core.autonomy_engine import AutonomyAction
 from core.cognition_loop import CognitionLoop, CognitionCycleResult
 from core.contradiction_engine import ContradictionEngine
 from core.context_builder import ContextBundle, ContextBuilder
@@ -608,6 +607,73 @@ class VexisGuiController(QObject):
 
         for contradiction in updates.get("contradictions", []):
             self.state_manager.add_contradiction(contradiction)
+
+        extracted_facts = updates.get("extracted_facts", [])
+        for packed in extracted_facts:
+            try:
+                subject, relation, value = packed.split("|", 2)
+            except ValueError:
+                continue
+
+            fact_text = f"{subject} {relation} {value}"
+            fact_memory = self.state_manager.add_memory(
+                kind="fact",
+                content=fact_text,
+                source="reasoning_engine",
+                status="active",
+                metadata={
+                    "subject": subject,
+                    "relation": relation,
+                    "value": value,
+                    "source_type": "internal_extracted_fact",
+                },
+                interaction_context={
+                    "speaker_role": "system",
+                    "speaker_id": "vex_fact_store",
+                    "source": "reasoning_engine",
+                    "interaction_type": "fact",
+                    "importance": "high",
+                    "store_as_evidence": True,
+                    "expects_reply": False,
+                    "expects_reasoning": True,
+                    "personality_allowed": False,
+                },
+            )
+
+            try:
+                if self.response_worker is not None:
+                    self.response_worker.memory_store.save_memory(fact_memory)
+            except Exception:
+                pass
+
+        resolved_questions = updates.get("resolved_questions", [])
+        for question in resolved_questions:
+            resolved_memory = self.state_manager.add_memory(
+                kind="resolved_question",
+                content=question,
+                source="resolution_engine",
+                status="resolved",
+                metadata={
+                    "source_type": "internal_resolution",
+                },
+                interaction_context={
+                    "speaker_role": "system",
+                    "speaker_id": "vex_resolution_engine",
+                    "source": "resolution_engine",
+                    "interaction_type": "resolved_question",
+                    "importance": "high",
+                    "store_as_evidence": True,
+                    "expects_reply": False,
+                    "expects_reasoning": True,
+                    "personality_allowed": False,
+                },
+            )
+
+            try:
+                if self.response_worker is not None:
+                    self.response_worker.memory_store.save_memory(resolved_memory)
+            except Exception:
+                pass
 
     def handle_user_message(self, text: str) -> None:
         if self._busy or self._shutting_down:

@@ -3,12 +3,12 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from core.belief_engine import BeliefRecord
-
 from core.context_builder import ContextBundle
 from core.contradiction_engine import ContradictionBatchResult, ContradictionEngine
+from core.fact_extractor import FactExtractionResult, FactExtractor
 from core.input_classifier import ClassificationResult
-from core.schemas import InputRecord, MemoryRecord, TaskRecord, VexisState
+from core.resolution_engine import ResolutionEngine, ResolutionResult
+from core.schemas import InputRecord, TaskRecord, VexisState
 from core.self_model import SelfModel
 
 
@@ -42,17 +42,24 @@ class ReasoningEngine:
     """
     Deterministic reasoning layer for VEX.
 
-    This is the actual cognition layer.
-    The LLM is only for language and personality filtering.
+    This is the cognition engine.
+    The LLM should only express or stylize the result, not decide truth.
     """
 
     def __init__(
         self,
         self_model: Optional[SelfModel] = None,
         contradiction_engine: Optional[ContradictionEngine] = None,
+        fact_extractor: Optional[FactExtractor] = None,
+        resolution_engine: Optional[ResolutionEngine] = None,
     ) -> None:
         self.self_model = self_model
         self.contradiction_engine = contradiction_engine or ContradictionEngine()
+        self.fact_extractor = fact_extractor or FactExtractor()
+        self.resolution_engine = resolution_engine or ResolutionEngine(
+            self_model=self.self_model,
+            fact_extractor=self.fact_extractor,
+        )
 
     def reason(
         self,
@@ -61,7 +68,7 @@ class ReasoningEngine:
         classification: ClassificationResult,
         context: Optional[ContextBundle] = None,
         task_record: Optional[TaskRecord] = None,
-        belief_records: Optional[list[BeliefRecord]] = None,
+        belief_records: Optional[list[Any]] = None,
         mixed_intent: Optional[dict[str, Any]] = None,
     ) -> InternalAnswer:
         input_type = classification.input_type
@@ -171,59 +178,82 @@ class ReasoningEngine:
         classification: ClassificationResult,
         context: Optional[ContextBundle],
         task_record: Optional[TaskRecord],
-        belief_records: list[BeliefRecord],
+        belief_records: list[Any],
     ) -> InternalAnswer:
-        question_text = input_record.raw_text.strip().lower()
+        recent_memories = context.related_memories if context else []
+        resolution: ResolutionResult = self.resolution_engine.resolve_question(
+            question_text=input_record.raw_text,
+            state=state,
+            recent_memories=recent_memories,
+            belief_records=belief_records,
+        )
 
-        # 1. Self-model answers first.
-        if self.self_model is not None:
-            self_answer = self.self_model.answer_identity_question(question_text)
-            if self_answer:
-                return InternalAnswer(
-                    answer_type="question_response",
-                    resolved=True,
-                    confidence=0.90,
-                    facts=[self_answer],
-                    unknowns=[],
-                    grounding=["self_model"],
-                    actions=[],
-                    proposed_text=self_answer,
-                    metadata={
-                        "classification": classification.input_type,
-                        "task_id": task_record.task_id if task_record else None,
-                        "reasoning_source": "self_model",
-                    },
-                )
+        if resolution.resolved:
+            facts = [fact.get("value", fact.get("statement", "")) for fact in resolution.supporting_facts]
+            facts = [fact for fact in facts if fact]
 
-        # 2. Belief candidates.
-        belief_match = self._best_belief_match(question_text, belief_records)
+            return InternalAnswer(
+                answer_type="question_response",
+                resolved=True,
+                confidence=resolution.confidence,
+                facts=facts,
+                unknowns=[],
+                grounding=[f"resolution_engine:{resolution.question_type}"],
+                actions=["store resolved answer"] if resolution.should_store_resolution else [],
+                proposed_text=resolution.answer_text,
+                metadata={
+                    "classification": classification.input_type,
+                    "task_id": task_record.task_id if task_record else None,
+                    "reasoning_source": "resolution_engine",
+                    "resolution": resolution.to_dict(),
+                },
+            )
+
+        if resolution.follow_up_question:
+            return InternalAnswer(
+                answer_type="question_response",
+                resolved=False,
+                confidence=resolution.confidence,
+                facts=[],
+                unknowns=[resolution.answer_text],
+                grounding=[f"resolution_engine:{resolution.question_type}"],
+                actions=["retain question in unresolved queue", "request missing fact"],
+                proposed_text=f"{resolution.answer_text} {resolution.follow_up_question}",
+                metadata={
+                    "classification": classification.input_type,
+                    "task_id": task_record.task_id if task_record else None,
+                    "reasoning_source": "resolution_engine_unresolved",
+                    "resolution": resolution.to_dict(),
+                },
+            )
+
+        belief_match = self._best_belief_match(input_record.raw_text.lower(), belief_records)
         if belief_match is not None:
             statement, score, belief = belief_match
             return InternalAnswer(
                 answer_type="question_response",
                 resolved=True,
-                confidence=min(max(belief.confidence_score, 0.42), 0.95),
+                confidence=min(max(float(getattr(belief, "confidence_score", 0.42)), 0.42), 0.95),
                 facts=[
                     f"Relevant belief candidate: {statement}",
-                    f"Confidence label: {belief.confidence_label}.",
+                    f"Confidence label: {getattr(belief, 'confidence_label', 'low')}.",
                 ],
                 unknowns=[],
                 grounding=[
-                    f"belief:{belief.belief_id}",
-                    f"belief_status:{belief.status}",
+                    f"belief:{getattr(belief, 'belief_id', 'unknown')}",
+                    f"belief_status:{getattr(belief, 'status', 'candidate')}",
                 ],
                 actions=[],
-                proposed_text=f"{statement} My current confidence in that is {belief.confidence_label}.",
+                proposed_text=f"{statement} My current confidence in that is {getattr(belief, 'confidence_label', 'low')}.",
                 metadata={
                     "classification": classification.input_type,
                     "task_id": task_record.task_id if task_record else None,
                     "reasoning_source": "belief_engine",
-                    "belief_id": belief.belief_id,
+                    "belief_id": getattr(belief, "belief_id", None),
                     "belief_score": score,
                 },
             )
 
-        # 3. Memory recall.
         grounding: list[str] = []
         facts: list[str] = []
         unknowns: list[str] = []
@@ -233,7 +263,7 @@ class ReasoningEngine:
             best = context.related_memories[0]
             best_text_lower = best.content.lower()
             shared_keywords = [
-                word for word in question_text.split()
+                word for word in input_record.raw_text.lower().split()
                 if len(word) > 3 and word in best_text_lower
             ]
 
@@ -264,7 +294,6 @@ class ReasoningEngine:
                     },
                 )
 
-        # 4. Recent context, but unresolved.
         if context and context.recent_inputs:
             recent = context.recent_inputs[0]
             recent_text = self._clip(recent.raw_text, 180)
@@ -292,7 +321,6 @@ class ReasoningEngine:
                 },
             )
 
-        # 5. No answer.
         if task_record:
             grounding.append(f"task:{task_record.task_id}")
             actions.append("keep unresolved task active")
@@ -325,14 +353,13 @@ class ReasoningEngine:
         classification: ClassificationResult,
         context: Optional[ContextBundle],
         task_record: Optional[TaskRecord],
-        belief_records: list[BeliefRecord],
+        belief_records: list[Any],
     ) -> InternalAnswer:
         grounding: list[str] = []
         facts: list[str] = []
         unknowns: list[str] = ["The claim is not yet verified."]
         actions: list[str] = ["mark claim as unverified"]
 
-        # Compare claim against nearby memories for contradictions.
         comparison_statements = [input_record.raw_text]
         if context and context.related_memories:
             comparison_statements.extend(memory.content for memory in context.related_memories[:4])
@@ -482,6 +509,31 @@ class ReasoningEngine:
         context: Optional[ContextBundle],
         task_record: Optional[TaskRecord],
     ) -> InternalAnswer:
+        extraction: FactExtractionResult = self.fact_extractor.extract(input_record.raw_text)
+
+        if extraction.success and extraction.facts:
+            fact_lines = [
+                f"{fact.subject} {fact.relation} {fact.value}"
+                for fact in extraction.facts
+            ]
+
+            return InternalAnswer(
+                answer_type="note_acknowledgement",
+                resolved=True,
+                confidence=0.92,
+                facts=["Structured fact(s) extracted from note."],
+                unknowns=[],
+                grounding=["fact_extractor"],
+                actions=["store extracted facts for later resolution"],
+                proposed_text="I stored that and extracted structured facts from it.",
+                metadata={
+                    "classification": classification.input_type,
+                    "reasoning_source": "fact_extractor",
+                    "fact_extraction": extraction.to_dict(),
+                    "fact_lines": fact_lines,
+                },
+            )
+
         return InternalAnswer(
             answer_type="note_acknowledgement",
             resolved=True,
@@ -500,20 +552,22 @@ class ReasoningEngine:
     def _best_belief_match(
         self,
         question_text: str,
-        belief_records: list[BeliefRecord],
-    ) -> Optional[tuple[str, float, BeliefRecord]]:
-        best_match: Optional[tuple[str, float, BeliefRecord]] = None
+        belief_records: list[Any],
+    ) -> Optional[tuple[str, float, Any]]:
+        best_match: Optional[tuple[str, float, Any]] = None
         question_terms = {word for word in question_text.split() if len(word) > 3}
 
         for belief in belief_records:
-            belief_terms = {word for word in belief.statement.lower().split() if len(word) > 3}
+            statement = getattr(belief, "statement", "")
+            confidence_score = float(getattr(belief, "confidence_score", 0.0))
+            belief_terms = {word for word in statement.lower().split() if len(word) > 3}
             overlap = len(question_terms.intersection(belief_terms))
             if overlap == 0:
                 continue
 
-            score = overlap + belief.confidence_score
+            score = overlap + confidence_score
             if best_match is None or score > best_match[1]:
-                best_match = (belief.statement, score, belief)
+                best_match = (statement, score, belief)
 
         return best_match
 

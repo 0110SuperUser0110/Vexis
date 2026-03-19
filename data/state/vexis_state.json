@@ -1,9 +1,9 @@
 {
   "lifecycle": {
     "mode": "active",
-    "boot_count": 17,
+    "boot_count": 18,
     "started_at": "2026-03-17T00:47:01Z",
-    "last_active_at": "2026-03-18T16:56:26Z"
+    "last_active_at": "2026-03-19T01:12:15Z"
   },
   "presence": {
     "visual_state": "idle",
@@ -17,7 +17,7 @@
   "cognition": {
     "is_thinking": false,
     "current_focus": "social response ready",
-    "current_input_id": "input_861d2145f4a3",
+    "current_input_id": "input_69ea2ec1aa52",
     "last_classification": "social"
   },
   "ingest": {
@@ -26,8 +26,8 @@
     "completed_files": []
   },
   "memory": {
-    "total_items": 3,
-    "last_memory_id": "mem_0894588eb705"
+    "total_items": 6,
+    "last_memory_id": "mem_b681c054592b"
   },
   "tasks": {
     "active_task_ids": [],
@@ -36,7 +36,10 @@
   },
   "epistemic": {
     "open_questions": [
-      "Where is here?"
+      "Where is here?",
+      "can you repeat what I tell you to?",
+      "what color is your cube?",
+      "what is the meaning of life?"
     ],
     "open_claims": [],
     "unsupported_claims": [],
@@ -266,6 +269,150 @@
         "second": 9
       },
       "interaction_context": {}
+    },
+    {
+      "memory_id": "mem_267524cd2dd6",
+      "timestamp": "2026-03-19T01:08:18Z",
+      "kind": "resolved_question",
+      "content": "where is here?",
+      "source": "resolution_engine",
+      "related_input_id": null,
+      "status": "resolved",
+      "metadata": {
+        "source_type": "internal_resolution"
+      },
+      "time_context": {
+        "utc_timestamp": "2026-03-19T01:08:18Z",
+        "local_timestamp": "2026-03-18T20:08:18",
+        "timezone_name": "America/Chicago",
+        "utc_offset": "-05:00",
+        "unix_timestamp": 1773882498.0,
+        "day_of_week": "Wednesday",
+        "part_of_day": "evening",
+        "is_weekend": false,
+        "year": 2026,
+        "month": 3,
+        "day": 18,
+        "hour": 20,
+        "minute": 8,
+        "second": 18
+      },
+      "interaction_context": {
+        "speaker_role": "system",
+        "speaker_id": "vex_resolution_engine",
+        "source": "resolution_engine",
+        "session_id": "local_session",
+        "interaction_type": "resolved_question",
+        "social_subtype": null,
+        "device_label": "BIGFATBETTY",
+        "location_label": "local_desktop",
+        "presence_state_at_input": "thinking",
+        "cognitive_state_at_input": "thinking",
+        "importance": "high",
+        "store_as_evidence": true,
+        "expects_reply": false,
+        "expects_reasoning": true,
+        "personality_allowed": false,
+        "raw_length": 14
+      }
+    },
+    {
+      "memory_id": "mem_99da553deca3",
+      "timestamp": "2026-03-19T01:10:34Z",
+      "kind": "fact",
+      "content": "vex running_on PRESENCE",
+      "source": "reasoning_engine",
+      "related_input_id": null,
+      "status": "active",
+      "metadata": {
+        "subject": "vex",
+        "relation": "running_on",
+        "value": "PRESENCE",
+        "source_type": "internal_extracted_fact"
+      },
+      "time_context": {
+        "utc_timestamp": "2026-03-19T01:10:34Z",
+        "local_timestamp": "2026-03-18T20:10:34",
+        "timezone_name": "America/Chicago",
+        "utc_offset": "-05:00",
+        "unix_timestamp": 1773882634.0,
+        "day_of_week": "Wednesday",
+        "part_of_day": "evening",
+        "is_weekend": false,
+        "year": 2026,
+        "month": 3,
+        "day": 18,
+        "hour": 20,
+        "minute": 10,
+        "second": 34
+      },
+      "interaction_context": {
+        "speaker_role": "system",
+        "speaker_id": "vex_fact_store",
+        "source": "reasoning_engine",
+        "session_id": "local_session",
+        "interaction_type": "fact",
+        "social_subtype": null,
+        "device_label": "BIGFATBETTY",
+        "location_label": "local_desktop",
+        "presence_state_at_input": "thinking",
+        "cognitive_state_at_input": "thinking",
+        "importance": "high",
+        "store_as_evidence": true,
+        "expects_reply": false,
+        "expects_reasoning": true,
+        "personality_allowed": false,
+        "raw_length": 23
+      }
+    },
+    {
+      "memory_id": "mem_b681c054592b",
+      "timestamp": "2026-03-19T01:10:34Z",
+      "kind": "fact",
+      "content": "which property your",
+      "source": "reasoning_engine",
+      "related_input_id": null,
+      "status": "active",
+      "metadata": {
+        "subject": "which",
+        "relation": "property",
+        "value": "your",
+        "source_type": "internal_extracted_fact"
+      },
+      "time_context": {
+        "utc_timestamp": "2026-03-19T01:10:34Z",
+        "local_timestamp": "2026-03-18T20:10:34",
+        "timezone_name": "America/Chicago",
+        "utc_offset": "-05:00",
+        "unix_timestamp": 1773882634.0,
+        "day_of_week": "Wednesday",
+        "part_of_day": "evening",
+        "is_weekend": false,
+        "year": 2026,
+        "month": 3,
+        "day": 18,
+        "hour": 20,
+        "minute": 10,
+        "second": 34
+      },
+      "interaction_context": {
+        "speaker_role": "system",
+        "speaker_id": "vex_fact_store",
+        "source": "reasoning_engine",
+        "session_id": "local_session",
+        "interaction_type": "fact",
+        "social_subtype": null,
+        "device_label": "BIGFATBETTY",
+        "location_label": "local_desktop",
+        "presence_state_at_input": "thinking",
+        "cognitive_state_at_input": "thinking",
+        "importance": "high",
+        "store_as_evidence": true,
+        "expects_reply": false,
+        "expects_reasoning": true,
+        "personality_allowed": false,
+        "raw_length": 19
+      }
     }
   ],
   "recent_tasks": []
