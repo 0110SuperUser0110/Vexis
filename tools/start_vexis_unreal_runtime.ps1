@@ -3,10 +3,18 @@ param(
     [switch]$UseStagedRuntime
 )
 
-$workspace = 'E:\Vexis'
-$uproject = 'C:\Users\Richard\Documents\Unreal Projects\VexisPresence\VexisPresence.uproject'
-$editor = 'E:\UE_5.7\Engine\Binaries\Win64\UnrealEditor.exe'
-$runtime = 'E:\Vexis\unreal\VexisPresence\Saved\StagedBuilds\Windows\VexisPresence.exe'
+$workspace = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
+$uproject = Join-Path $workspace 'unreal\VexisPresence\VexisPresence.uproject'
+$runtime = Join-Path $workspace 'unreal\VexisPresence\Saved\StagedBuilds\Windows\VexisPresence.exe'
+$editorCandidates = @()
+if ($env:VEXIS_UNREAL_EDITOR) {
+    $editorCandidates += $env:VEXIS_UNREAL_EDITOR
+}
+$editorCandidates += @(
+    'E:\UE_5.7\Engine\Binaries\Win64\UnrealEditor.exe',
+    'C:\Program Files\Epic Games\UE_5.7\Engine\Binaries\Win64\UnrealEditor.exe'
+)
+$editor = $editorCandidates | Where-Object { Test-Path $_ } | Select-Object -First 1
 $controllerLauncher = Join-Path $workspace 'tools\run_vexis_controller_foreground.ps1'
 $mapArg = '/Engine/Maps/Entry?game=/Script/VexisPresence.VexisPresenceGameMode'
 $windowArgs = '-windowed -noborder -d3d11 -ResX=520 -ResY=520 -WinX=70 -WinY=110 -NoSplash -NoLoadingScreen -NoScreenMessages -DefaultViewportMouseCaptureMode=NoCapture -DefaultViewportMouseLockMode=DoNotLock'
@@ -26,6 +34,9 @@ if ($UseStagedRuntime -and (Test-Path $runtime)) {
     $unreal = Start-Process -FilePath $runtime -ArgumentList $launchArgs -WorkingDirectory (Split-Path $runtime) -PassThru
 }
 else {
+    if (!$editor) {
+        throw "Unreal Editor not found. Set VEXIS_UNREAL_EDITOR or install UE 5.7 in a standard location."
+    }
     $launchArgs = '"{0}" {1} -game {2}' -f $uproject, $mapArg, $windowArgs
     $unreal = Start-Process -FilePath $editor -ArgumentList $launchArgs -PassThru
 }

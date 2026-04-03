@@ -7,11 +7,13 @@
 - The actor responds to live states such as `idle`, `thinking`, `speaking`, and `dancing`.
 
 ## Start the stack
-- Backend only: `powershell -ExecutionPolicy Bypass -File E:\Vexis\tools\start_vexis_backend_unreal.ps1`
-- Backend + Unreal Editor: `powershell -ExecutionPolicy Bypass -File E:\Vexis\tools\start_vexis_unreal.ps1`
+- From the repo root, backend only: `powershell -ExecutionPolicy Bypass -File .\tools\start_vexis_backend_unreal.ps1`
+- From the repo root, backend + Unreal Editor: `powershell -ExecutionPolicy Bypass -File .\tools\start_vexis_unreal.ps1`
+
+If Unreal Engine is not installed in a standard location, set `VEXIS_UNREAL_EDITOR` before launch.
 
 ## Import the head asset
-1. Open `/E:/Vexis/unreal/VexisPresence/VexisPresence.uproject` in Unreal.
+1. Open [`unreal/VexisPresence/VexisPresence.uproject`](../unreal/VexisPresence/VexisPresence.uproject) in Unreal.
 2. Import your FBX head asset into the Content Browser.
 3. Enter the default map and drag a `VexisPresenceActor` into the level.
 4. In the actor's `AvatarMesh` component, assign the imported mesh.

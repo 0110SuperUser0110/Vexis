@@ -2,7 +2,7 @@ param(
     [int]$BridgePort = 8765
 )
 
-$workspace = 'E:\Vexis'
+$workspace = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $python = Join-Path $workspace '.venv\Scripts\python.exe'
 $script = Join-Path $workspace 'interface\gui_main.py'
 

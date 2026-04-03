@@ -1,17 +1,36 @@
 from __future__ import annotations
 
+import os
 import socket
 import subprocess
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
 
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
+def _default_server_path() -> str:
+    override = os.environ.get("VEXIS_LLAMA_SERVER_PATH")
+    if override:
+        return override
+    return str(_repo_root() / "bin" / "llama.cpp" / "llama-server.exe")
+
+
+def _default_model_path() -> str:
+    override = os.environ.get("VEXIS_LLM_MODEL_PATH")
+    if override:
+        return override
+    return str(_repo_root() / "models" / "text" / "qwen3_8b" / "Qwen3-8B-Q4_K_M.gguf")
+
+
 @dataclass
 class LLMServiceConfig:
-    server_path: str = r"E:\Vexis\bin\llama.cpp\llama-server.exe"
-    model_path: str = r"E:\Vexis\models\text\qwen3_8b\Qwen3-8B-Q4_K_M.gguf"
+    server_path: str = field(default_factory=_default_server_path)
+    model_path: str = field(default_factory=_default_model_path)
     host: str = "127.0.0.1"
     port: int = 8080
     gpu_layers: int = 999
