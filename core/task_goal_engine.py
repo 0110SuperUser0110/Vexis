@@ -67,6 +67,7 @@ class TaskGoalEngine:
     def __init__(self, state_manager: StateManager) -> None:
         self.state_manager = state_manager
         self._goal_counter = 0
+        self._last_goal_signatures: dict[str, tuple[Any, ...]] = {}
 
     def handle_user_input(
         self,
@@ -197,10 +198,14 @@ class TaskGoalEngine:
 
     def create_goal_from_open_questions(self, state: VexisState) -> Optional[GoalRecord]:
         if not state.epistemic.open_questions:
+            self._last_goal_signatures.pop("open_questions", None)
             return None
 
         question_count = len(state.epistemic.open_questions)
         task_ids = list(state.tasks.unresolved_task_ids)[-10:]
+        signature = (question_count, tuple(task_ids))
+        if self._last_goal_signatures.get("open_questions") == signature:
+            return None
 
         goal = self._new_goal(
             title="reduce unresolved question backlog",
@@ -220,14 +225,19 @@ class TaskGoalEngine:
                 "open_question_count": question_count,
             },
         )
+        self._last_goal_signatures["open_questions"] = signature
         return goal
 
     def create_goal_from_unsupported_claims(self, state: VexisState) -> Optional[GoalRecord]:
         if not state.epistemic.unsupported_claims:
+            self._last_goal_signatures.pop("unsupported_claims", None)
             return None
 
         claim_count = len(state.epistemic.unsupported_claims)
         task_ids = list(state.tasks.unresolved_task_ids)[-10:]
+        signature = (claim_count, tuple(task_ids))
+        if self._last_goal_signatures.get("unsupported_claims") == signature:
+            return None
 
         goal = self._new_goal(
             title="reduce unsupported claim backlog",
@@ -247,6 +257,7 @@ class TaskGoalEngine:
                 "unsupported_claim_count": claim_count,
             },
         )
+        self._last_goal_signatures["unsupported_claims"] = signature
         return goal
 
     def create_autonomy_task(

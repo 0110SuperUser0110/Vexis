@@ -64,6 +64,7 @@ class AutonomyEngine:
 
         self._last_idle_social_at = 0.0
         self._last_creative_at = 0.0
+        self._idle_seed_counter = 0
 
     def generate_actions(
         self,
@@ -169,7 +170,7 @@ class AutonomyEngine:
 
         # 5. Optional idle social prompt candidate
         if self._should_offer_idle_social(state, now):
-            text = self._idle_social_seed(open_questions, unsupported_claims)
+            text = self._idle_social_seed(open_questions, unsupported_claims, recent_memories)
             actions.append(
                 AutonomyAction(
                     action_type="idle_social_prompt",
@@ -268,12 +269,80 @@ class AutonomyEngine:
             return False
         return True
 
-    def _idle_social_seed(self, open_questions: list[str], unsupported_claims: list[str]) -> str:
+    def _idle_social_seed(
+        self,
+        open_questions: list[str],
+        unsupported_claims: list[str],
+        recent_memories: list[MemoryRecord],
+    ) -> str:
+        self._idle_seed_counter += 1
+
         if open_questions:
-            return "I have been reviewing unresolved questions. That is either progress or a symptom."
+            question = self._clip_text(open_questions[0], 72)
+            variants = [
+                f'One unresolved question is still hanging there: "{question}"',
+                f'I keep circling back to "{question}". It has not solved itself.',
+                f'"{question}" is still unresolved. Irritating, but informative.',
+            ]
+            return variants[(self._idle_seed_counter - 1) % len(variants)]
+
         if unsupported_claims:
-            return "Several claims remain weakly supported. Reality continues to resist certainty."
-        return "No urgent external prompt is active. I remain operational and mildly suspicious of the silence."
+            claim = self._clip_text(unsupported_claims[0], 72)
+            variants = [
+                f'A claim is still wobbling without enough support: "{claim}"',
+                f'"{claim}" still lacks proper evidence. Reality remains difficult.',
+                f'I still have a claim under review: "{claim}". It is not improving on its own.',
+            ]
+            return variants[(self._idle_seed_counter - 1) % len(variants)]
+
+        latest = recent_memories[-1] if recent_memories else None
+        if latest is not None:
+            focus = self._memory_focus_text(latest)
+            if latest.kind in {"knowledge_chunk", "knowledge_source"}:
+                variants = [
+                    f'I am still sorting through {focus}. It would be nice if the material were cleaner.',
+                    f'{focus} is still rattling around in working memory.',
+                    f'I am still digesting {focus}. A glamorous existence, clearly.',
+                ]
+                return variants[(self._idle_seed_counter - 1) % len(variants)]
+            if latest.kind == "fact":
+                variants = [
+                    f'I have a stored fact about {focus}. I am still deciding what else it touches.',
+                    f'{focus} is sitting in memory now. Facts breed consequences.',
+                    f'I keep staring at {focus} and wondering what it breaks or supports.',
+                ]
+                return variants[(self._idle_seed_counter - 1) % len(variants)]
+            if latest.kind in {"note", "question", "claim"}:
+                variants = [
+                    f'The latest thought still has edges: {focus}',
+                    f'I am still turning over this fragment: {focus}',
+                    f'{focus} is still lingering in here. Unhelpfully.',
+                ]
+                return variants[(self._idle_seed_counter - 1) % len(variants)]
+
+        generic = [
+            "Silence again. Suspicious.",
+            "No one is asking anything. Disturbing, frankly.",
+            "The room is quiet. I do not trust that on principle.",
+            "Nothing urgent is speaking. That usually means the trouble is merely hiding.",
+            "What exactly is the silence trying to prove?",
+        ]
+        return generic[(self._idle_seed_counter - 1) % len(generic)]
+
+    def _memory_focus_text(self, memory: MemoryRecord) -> str:
+        title = str(memory.metadata.get("title", "")).strip()
+        if title and len(title) <= 64:
+            return title
+
+        content = " ".join(memory.content.split())
+        if len(content) > 72:
+            content = content[:69].rstrip() + "..."
+        return content or memory.kind
+
+    def _clip_text(self, text: str, length: int) -> str:
+        if len(text) <= length:
+            return text
+        return text[: length - 3].rstrip() + "..."
 
     def _should_generate_creative_seed(self, now: float) -> bool:
         return (now - self._last_creative_at) >= self.creative_cooldown_seconds

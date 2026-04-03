@@ -47,6 +47,36 @@ class MixedIntentResult:
         }
 
 
+@dataclass
+class RoutingInputPlan:
+    original_text: str
+    original_classification: ClassificationResult
+    effective_text: str
+    effective_classification: ClassificationResult
+    mixed_intent: MixedIntentResult
+    stripped_social_preface: bool = False
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "original_text": self.original_text,
+            "original_classification": {
+                "input_type": self.original_classification.input_type,
+                "confidence": self.original_classification.confidence,
+                "reasons": self.original_classification.reasons,
+                "features": self.original_classification.features,
+            },
+            "effective_text": self.effective_text,
+            "effective_classification": {
+                "input_type": self.effective_classification.input_type,
+                "confidence": self.effective_classification.confidence,
+                "reasons": self.effective_classification.reasons,
+                "features": self.effective_classification.features,
+            },
+            "mixed_intent": self.mixed_intent.to_dict(),
+            "stripped_social_preface": self.stripped_social_preface,
+        }
+
+
 class MixedIntentEngine:
     """
     Detects and separates mixed-intent prompts.
@@ -143,6 +173,31 @@ class MixedIntentEngine:
                 "clause_count": len(clauses),
                 "intent_set": sorted({segment.intent_type for segment in segments}),
             },
+        )
+
+    def plan(self, text: str) -> RoutingInputPlan:
+        original_text = (text or "").strip()
+        original_classification = self.classifier.classify(original_text)
+        mixed_result = self.analyze(original_text)
+
+        effective_text = original_text
+        effective_classification = original_classification
+        stripped_social_preface = False
+
+        if mixed_result.is_mixed and mixed_result.dominant_intent != "social":
+            candidate = self.rewrite_for_core(mixed_result, original_text).strip()
+            if candidate:
+                effective_text = candidate
+                effective_classification = self.classifier.classify(candidate)
+                stripped_social_preface = candidate != original_text
+
+        return RoutingInputPlan(
+            original_text=original_text,
+            original_classification=original_classification,
+            effective_text=effective_text,
+            effective_classification=effective_classification,
+            mixed_intent=mixed_result,
+            stripped_social_preface=stripped_social_preface,
         )
 
     def rewrite_for_core(self, result: MixedIntentResult, original_text: str) -> str:

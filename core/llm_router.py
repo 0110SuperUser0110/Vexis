@@ -19,6 +19,16 @@ class LLMResult:
 
 
 class LLMRouter:
+    """
+    Interface-layer router for the live speech/personality model.
+
+    Design:
+    - the deterministic system remains the core
+    - this class only talks to the local LLM service
+    - availability reflects the real service state
+    - failures are surfaced to higher layers so the deterministic core can decide what to do
+    """
+
     def __init__(
         self,
         model_name: str = "qwen3-8b-local",
@@ -26,12 +36,14 @@ class LLMRouter:
         timeout_seconds: int = 20,
         temperature: float = 0.05,
         max_tokens: int = 80,
+        disable_model_thinking: bool = True,
     ) -> None:
         self.model_name = model_name
         self.base_url = base_url.rstrip("/")
         self.timeout_seconds = timeout_seconds
         self.temperature = temperature
         self.max_tokens = max_tokens
+        self.disable_model_thinking = disable_model_thinking
 
     def is_available(self) -> bool:
         try:
@@ -45,10 +57,14 @@ class LLMRouter:
             return False
 
     def generate_response(self, prompt: str, system_prompt: Optional[str] = None) -> LLMResult:
+        prompt_text = prompt.strip()
+        if self.disable_model_thinking and not prompt_text.startswith("/no_think"):
+            prompt_text = f"/no_think\n{prompt_text}"
+
         messages: list[dict[str, str]] = []
         if system_prompt:
             messages.append({"role": "system", "content": system_prompt})
-        messages.append({"role": "user", "content": prompt})
+        messages.append({"role": "user", "content": prompt_text})
 
         body = {
             "model": self.model_name,
@@ -79,6 +95,16 @@ class LLMRouter:
             )
 
             cleaned = self._clean_text(text)
+            if not cleaned:
+                return LLMResult(
+                    success=False,
+                    text="",
+                    model_name=self.model_name,
+                    prompt=prompt,
+                    raw_output=raw_text,
+                    error="llm_output_rejected",
+                    metadata={"live_llm": True},
+                )
 
             return LLMResult(
                 success=True,
@@ -86,6 +112,7 @@ class LLMRouter:
                 model_name=self.model_name,
                 prompt=prompt,
                 raw_output=raw_text,
+                metadata={"live_llm": True},
             )
 
         except HTTPError as exc:
@@ -94,6 +121,7 @@ class LLMRouter:
                 detail = exc.read().decode("utf-8", errors="replace")
             except Exception:
                 detail = str(exc)
+
             return LLMResult(
                 success=False,
                 text="",
@@ -101,7 +129,9 @@ class LLMRouter:
                 prompt=prompt,
                 raw_output=detail,
                 error=f"http error {exc.code}",
+                metadata={"live_llm": False},
             )
+
         except URLError as exc:
             return LLMResult(
                 success=False,
@@ -110,7 +140,9 @@ class LLMRouter:
                 prompt=prompt,
                 raw_output=raw_text,
                 error=f"connection error: {exc}",
+                metadata={"live_llm": False},
             )
+
         except Exception as exc:
             return LLMResult(
                 success=False,
@@ -119,6 +151,7 @@ class LLMRouter:
                 prompt=prompt,
                 raw_output=raw_text,
                 error=str(exc),
+                metadata={"live_llm": False},
             )
 
     def _clean_text(self, text: str) -> str:

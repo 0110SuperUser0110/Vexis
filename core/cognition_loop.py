@@ -7,8 +7,12 @@ from typing import Any, Optional
 from core.autonomy_engine import AutonomyAction, AutonomyEngine
 from core.belief_engine import BeliefEngine, BeliefRecord
 from core.evidence_engine import EvidenceAssessment, EvidenceEngine
+from core.fact_learning_engine import FactLearningEngine
+from core.inquiry_engine import InquiryEngine
 from core.methodology_engine import MethodologyAssessment, MethodologyEngine
+from core.resolution_engine import ResolutionEngine
 from core.schemas import MemoryRecord, VexisState
+from core.self_model import SelfModel
 from core.state_manager import StateManager
 from memory.memory_store import MemoryStore
 
@@ -21,6 +25,7 @@ class CognitionCycleResult:
     active_task_count: int
     actions: list[AutonomyAction] = field(default_factory=list)
     belief_updates: list[BeliefRecord] = field(default_factory=list)
+    resolved_questions: list[str] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
     metadata: dict[str, Any] = field(default_factory=dict)
 
@@ -32,6 +37,7 @@ class CognitionCycleResult:
             "active_task_count": self.active_task_count,
             "actions": [action.to_dict() for action in self.actions],
             "belief_updates": [belief.to_dict() for belief in self.belief_updates],
+            "resolved_questions": self.resolved_questions,
             "notes": self.notes,
             "metadata": self.metadata,
         }
@@ -60,6 +66,9 @@ class CognitionLoop:
         methodology_engine: Optional[MethodologyEngine] = None,
         evidence_engine: Optional[EvidenceEngine] = None,
         belief_engine: Optional[BeliefEngine] = None,
+        fact_learning_engine: Optional[FactLearningEngine] = None,
+        inquiry_engine: Optional[InquiryEngine] = None,
+        resolution_engine: Optional[ResolutionEngine] = None,
     ) -> None:
         self.state_manager = state_manager
         self.memory_store = memory_store
@@ -67,9 +76,19 @@ class CognitionLoop:
         self.methodology_engine = methodology_engine or MethodologyEngine()
         self.evidence_engine = evidence_engine or EvidenceEngine()
         self.belief_engine = belief_engine or BeliefEngine()
+        self.fact_learning_engine = fact_learning_engine or FactLearningEngine(
+            evidence_engine=self.evidence_engine,
+            belief_engine=self.belief_engine,
+            methodology_engine=self.methodology_engine,
+        )
+        self.inquiry_engine = inquiry_engine or InquiryEngine()
+        self.resolution_engine = resolution_engine or ResolutionEngine(
+            self_model=SelfModel(self.state_manager),
+        )
 
         self._cycle_index = 0
         self._last_cycle_at = 0.0
+        self._last_review_signals: dict[str, int] = {}
 
     def run_cycle(self) -> CognitionCycleResult:
         state = self.state_manager.get_state()
@@ -84,6 +103,9 @@ class CognitionLoop:
         notes: list[str] = []
         actions: list[AutonomyAction] = []
         belief_updates: list[BeliefRecord] = []
+        resolved_questions: list[str] = []
+        all_memories = self.memory_store.load_memories()
+        recent_memories = all_memories[-250:]
 
         # 1. Ask the autonomy engine what to do next.
         actions.extend(
@@ -96,38 +118,130 @@ class CognitionLoop:
             )
         )
 
-        # 2. Review unresolved questions against memory.
+        # 2. Review unresolved questions against memory and attempt low-risk background resolution.
         for question in open_questions[:10]:
+            signal_key = f"open_question::{question}"
+
+            if self._has_resolved_question_memory(question, all_memories):
+                resolved_questions.append(question)
+                self._last_review_signals.pop(signal_key, None)
+                continue
+
+            resolution = self.resolution_engine.resolve_question(
+                question_text=question,
+                state=state,
+                recent_memories=recent_memories,
+            )
+            if resolution.resolved:
+                resolved_questions.append(question)
+                self._last_review_signals.pop(signal_key, None)
+                if resolution.should_store_resolution and not self._has_resolved_question_memory(question, all_memories):
+                    resolved_memory = self.state_manager.add_memory(
+                        kind="resolved_question",
+                        content=question,
+                        source="cognition_loop",
+                        status="resolved",
+                        metadata={
+                            "source_type": "background_resolution",
+                            "answer_text": resolution.answer_text,
+                            "question_type": resolution.question_type,
+                            "reasons": list(resolution.reasons),
+                        },
+                        interaction_context={
+                            "speaker_role": "system",
+                            "speaker_id": "vex_cognition_loop",
+                            "source": "cognition_loop",
+                            "interaction_type": "resolved_question",
+                            "importance": "high",
+                            "store_as_evidence": True,
+                            "expects_reply": False,
+                            "expects_reasoning": True,
+                            "personality_allowed": False,
+                        },
+                    )
+                    self.memory_store.save_memory(resolved_memory)
+                    all_memories.append(resolved_memory)
+                    recent_memories.append(resolved_memory)
+                notes.append(f'background review resolved open question "{question}"')
+                continue
+
             matches = self.memory_store.search_memories(question, limit=5)
             if matches:
-                notes.append(
-                    f'background review found {len(matches)} possible memory matches for open question "{question}"'
-                )
+                match_count = len(matches)
+                if self._last_review_signals.get(signal_key) != match_count:
+                    notes.append(
+                        f'background review found {match_count} possible memory matches for open question "{question}"'
+                    )
+                    self._last_review_signals[signal_key] = match_count
+            else:
+                self._last_review_signals.pop(signal_key, None)
+
+        for question in resolved_questions:
+            self.state_manager.remove_open_question(question)
 
         # 3. Review unsupported claims against memory.
         for claim in unsupported_claims[:10]:
             matches = self.memory_store.search_memories(claim, limit=5)
             if matches:
-                notes.append(
-                    f'background review found {len(matches)} possible memory matches for unsupported claim "{claim}"'
-                )
+                signal_key = f"unsupported_claim::{claim}"
+                match_count = len(matches)
+                if self._last_review_signals.get(signal_key) != match_count:
+                    notes.append(
+                        f'background review found {match_count} possible memory matches for unsupported claim "{claim}"'
+                    )
+                    self._last_review_signals[signal_key] = match_count
+            else:
+                self._last_review_signals.pop(f"unsupported_claim::{claim}", None)
 
-        # 4. Try to form low-risk belief candidates from repeated note/file memories.
+        # 4. Promote sourced structured facts into weighted belief candidates.
+        fact_beliefs = self._build_fact_belief_candidates(state.recent_memories)
+        if fact_beliefs:
+            belief_updates.extend(fact_beliefs)
+            inquiry_questions = self.inquiry_engine.generate_questions_from_beliefs(fact_beliefs, max_questions=4)
+            for question in inquiry_questions:
+                self.state_manager.add_open_question(question)
+            if inquiry_questions:
+                notes.append(f"generated {len(inquiry_questions)} follow-up questions from weakly supported beliefs")
+
+        # 5. Try to form low-risk belief candidates from repeated note/file memories.
         belief_candidates = self._build_belief_candidates(state.recent_memories)
         belief_updates.extend(belief_candidates)
 
+        current_state = self.state_manager.get_state()
         return CognitionCycleResult(
             cycle_timestamp=now,
-            open_question_count=len(open_questions),
-            unsupported_claim_count=len(unsupported_claims),
+            open_question_count=len(current_state.epistemic.open_questions),
+            unsupported_claim_count=len(current_state.epistemic.unsupported_claims),
             active_task_count=active_task_count,
             actions=actions,
             belief_updates=belief_updates,
+            resolved_questions=resolved_questions,
             notes=notes,
             metadata={
                 "cycle_index": self._cycle_index,
                 "recent_memory_count": len(state.recent_memories),
             },
+        )
+
+    def _has_resolved_question_memory(self, question: str, memories: list[MemoryRecord]) -> bool:
+        normalized_question = self._normalize_statement(question)
+        for memory in memories:
+            if memory.kind != "resolved_question":
+                continue
+            if self._normalize_statement(memory.content) == normalized_question:
+                return True
+        return False
+
+    def _build_fact_belief_candidates(self, recent_memories: list[MemoryRecord]) -> list[BeliefRecord]:
+        existing_ids = {
+            str(memory.metadata.get("belief_id"))
+            for memory in recent_memories
+            if memory.kind == "belief_candidate" and memory.metadata.get("belief_id")
+        }
+        fact_memories = [memory for memory in recent_memories if memory.kind == "fact"]
+        return self.fact_learning_engine.build_beliefs_from_fact_memories(
+            fact_memories,
+            existing_belief_ids=existing_ids,
         )
 
     def _build_belief_candidates(self, recent_memories: list[MemoryRecord]) -> list[BeliefRecord]:

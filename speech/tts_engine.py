@@ -4,9 +4,6 @@ import json
 from pathlib import Path
 from typing import Any, Dict
 
-from speech.piper_tts import PiperTTSEngine
-from speech.windows_tts import WindowsTTSEngine
-
 
 class TTSEngine:
     """
@@ -21,6 +18,8 @@ class TTSEngine:
         backend = str(self.config.get("backend", "windows")).lower()
 
         if backend == "piper":
+            from speech.piper_tts import PiperTTSEngine
+
             self.engine = PiperTTSEngine(
                 piper_exe=self.config.get("piper_exe"),
                 model_path=self.config["model_path"],
@@ -29,6 +28,8 @@ class TTSEngine:
                 use_cuda=bool(self.config.get("use_cuda", False)),
             )
         else:
+            from speech.windows_tts import WindowsTTSEngine
+
             self.engine = WindowsTTSEngine()
 
     def _load_config(self) -> Dict[str, Any]:

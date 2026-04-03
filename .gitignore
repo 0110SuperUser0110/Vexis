@@ -26,3 +26,22 @@ __pycache__/
 
 # Optional local test/output files
 *.wav
+# Local runtime state
+.vscode/
+data/logs/
+data/tmp/
+data/test_tmp/
+data/memory/*.bak.json
+data/state/*.bak.json
+tests/tmp*/
+
+# Imported local avatar assets
+unreal/*.zip
+unreal/VexisPresence/Content/CombatMagicAnims/
+
+# Unreal generated output
+unreal/**/Binaries/
+unreal/**/DerivedDataCache/
+unreal/**/Intermediate/
+unreal/**/Saved/
+unreal/**/*.sln

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
@@ -8,7 +10,7 @@ from core.front_router import FrontRouteResult
 from core.input_classifier import ClassificationResult
 from core.language_renderer import LanguageRenderer
 from core.mixed_intent_engine import MixedIntentResult
- 
+
 from core.reasoning_engine import InternalAnswer, ReasoningEngine
 from core.schemas import InputRecord, MemoryRecord, TaskRecord, VexisState
 
@@ -60,25 +62,11 @@ class ResponseEngine:
             mixed_intent=mixed_intent.to_dict() if mixed_intent else None,
         )
 
-        llm_allowed = (
-            prefer_llm
-            and (
-                internal_answer.answer_type == "social_response"
-                or (
-                    internal_answer.answer_type == "question_response"
-                    and internal_answer.resolved
-                    and len(internal_answer.facts) > 0
-                )
-                or (
-                    internal_answer.answer_type == "note_acknowledgement"
-                    and internal_answer.metadata.get("reasoning_source") == "fact_extractor"
-                )
-            )
-        )
-
         render_result = self.language_renderer.render(
             internal_answer=internal_answer.to_dict(),
-            prefer_llm=llm_allowed,
+            prefer_llm=prefer_llm,
+            user_input=input_record.raw_text,
+            input_type=classification.input_type,
         )
 
         internal_answer_dict = internal_answer.to_dict()
@@ -102,7 +90,33 @@ class ResponseEngine:
                     relation = fact.get("relation", "")
                     value = fact.get("value", "")
                     if subject and relation and value:
-                        epistemic_updates["extracted_facts"].append(f"{subject}|{relation}|{value}")
+                        epistemic_updates["extracted_facts"].append(
+                            json.dumps(
+                                {
+                                    "subject": subject,
+                                    "relation": relation,
+                                    "value": value,
+                                    "confidence": fact.get("confidence", 0.72),
+                                    "fact_type": fact.get("fact_type", "fact"),
+                                    "reasons": fact.get("reasons", []),
+                                    "metadata": fact.get("metadata", {}),
+                                },
+                                ensure_ascii=False,
+                            )
+                        )
+
+        if internal_answer.metadata.get("reasoning_source") == "fact_extractor_pending_verification":
+            extracted = internal_answer.metadata.get("fact_extraction", {})
+            if extracted and extracted.get("success"):
+                epistemic_updates.setdefault("open_questions", [])
+                for fact in extracted.get("facts", [])[:3]:
+                    subject = fact.get("subject", "")
+                    relation = fact.get("relation", "")
+                    value = fact.get("value", "")
+                    if subject and relation and value:
+                        epistemic_updates["open_questions"].append(
+                            f"What source or proof supports the proposed fact: {subject} {relation} {value}?"
+                        )
 
         if internal_answer.metadata.get("reasoning_source") == "resolution_engine":
             resolution = internal_answer.metadata.get("resolution", {})
@@ -150,6 +164,8 @@ class ResponseEngine:
             return "command resolved" if internal_answer.resolved else "command pending"
 
         if input_type == "note":
+            if internal_answer.metadata.get("requires_fact_confirmation"):
+                return "note stored pending fact verification"
             if source == "fact_extractor":
                 return "note stored with extracted facts"
             return "note stored"
@@ -164,8 +180,11 @@ class ResponseEngine:
     ) -> dict[str, list[str]]:
         updates: dict[str, list[str]] = {}
 
-        if classification.input_type == "question" and not internal_answer.resolved:
-            updates["open_questions"] = [input_record.raw_text]
+        if classification.input_type == "question":
+            if internal_answer.resolved:
+                updates["resolved_questions"] = [input_record.raw_text]
+            else:
+                updates["open_questions"] = [input_record.raw_text]
 
         if classification.input_type == "claim":
             updates["open_claims"] = [input_record.raw_text]
@@ -175,5 +194,18 @@ class ResponseEngine:
         contradiction_result = internal_answer.metadata.get("contradiction_result")
         if contradiction_result and contradiction_result.get("flagged_count", 0) > 0:
             updates["contradictions"] = [input_record.raw_text]
+
+        if internal_answer.metadata.get("requires_fact_confirmation"):
+            extraction = internal_answer.metadata.get("fact_extraction", {})
+            if extraction.get("success"):
+                updates.setdefault("open_questions", [])
+                for fact in extraction.get("facts", [])[:3]:
+                    subject = fact.get("subject", "")
+                    relation = fact.get("relation", "")
+                    value = fact.get("value", "")
+                    if subject and relation and value:
+                        updates["open_questions"].append(
+                            f"Should VEXIS store as a fact candidate: {subject} {relation} {value}?"
+                        )
 
         return updates

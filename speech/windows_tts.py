@@ -2,7 +2,10 @@ from __future__ import annotations
 
 from typing import Optional
 
-import pyttsx3
+try:
+    import pyttsx3
+except ModuleNotFoundError:
+    pyttsx3 = None  # type: ignore
 
 
 class WindowsTTSEngine:
@@ -11,6 +14,9 @@ class WindowsTTSEngine:
     """
 
     def __init__(self, rate: int = 180, volume: float = 1.0, voice_id: Optional[str] = None) -> None:
+        if pyttsx3 is None:
+            raise RuntimeError("pyttsx3 is not installed for the Windows TTS backend.")
+
         self.engine = pyttsx3.init()
         self.engine.setProperty("rate", rate)
         self.engine.setProperty("volume", volume)

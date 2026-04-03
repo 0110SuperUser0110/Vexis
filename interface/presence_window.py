@@ -8,6 +8,27 @@ from PySide6.QtGui import QColor
 from PySide6.QtQuick import QQuickView
 
 
+class NullPresenceWindow:
+    def __init__(self) -> None:
+        self._pending_state = "idle"
+        self._pending_thought_lines = ["VEXIS external presence active"]
+
+    def set_state(self, state: str) -> None:
+        self._pending_state = state
+
+    def set_thought_lines(self, lines: list[str]) -> None:
+        self._pending_thought_lines = lines[-12:] if lines else ["..."]
+
+    def setPosition(self, *_args) -> None:  # noqa: N802
+        return
+
+    def show(self) -> None:
+        return
+
+    def close(self) -> None:
+        return
+
+
 class PresenceWindow(QQuickView):
     """
     Floating VEXIS presence window using QML + View3D.
@@ -28,7 +49,7 @@ class PresenceWindow(QQuickView):
             | Qt.Tool
         )
         self.setResizeMode(QQuickView.SizeRootObjectToView)
-        self.resize(520, 620)
+        self.resize(680, 760)
 
         self._drag_offset: Optional[QPoint] = None
         self._pending_state = "idle"

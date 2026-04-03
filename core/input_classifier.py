@@ -52,7 +52,7 @@ class InputClassifier:
             "open", "analyze", "review", "check", "compare", "summarize", "find",
             "search", "show", "write", "draft", "fix", "update", "remove", "add",
             "save", "load", "remember", "recall", "read", "ingest", "scan",
-            "create", "generate", "list", "explain", "tell",
+            "create", "generate", "list", "explain", "tell", "say", "greet", "dance",
         }
         self.claim_markers = {
             "i think", "i believe", "i suspect", "i feel", "it seems", "it appears",
@@ -82,6 +82,16 @@ class InputClassifier:
             r"\bthank you\b",
             r"\bappreciate it\b",
         ]
+        self.canonical_terms = set().union(
+            self.greeting_terms,
+            self.gratitude_terms,
+            self.farewell_terms,
+            self.social_openers,
+            self.question_starters,
+            self.command_verbs,
+            self.state_verbs,
+            {"good", "please", "thanks", "thank"},
+        )
 
     def classify(self, text: str) -> ClassificationResult:
         raw = text or ""
@@ -118,10 +128,33 @@ class InputClassifier:
             features=features,
         )
 
+    def normalize_text(self, text: str) -> str:
+        return self._normalize(text)
+
     def _normalize(self, text: str) -> str:
         text = text.strip().lower()
         text = re.sub(r"\s+", " ", text)
-        return text
+        return re.sub(r"[a-z0-9']+", lambda match: self._canonicalize_token(match.group(0)), text)
+
+    def _canonicalize_token(self, token: str) -> str:
+        if token in self.canonical_terms:
+            return token
+
+        candidate = token
+        for _ in range(3):
+            reduced = self._reduce_doubled_letter(candidate)
+            if reduced == candidate:
+                break
+            if reduced in self.canonical_terms:
+                return reduced
+            candidate = reduced
+        return token
+
+    def _reduce_doubled_letter(self, token: str) -> str:
+        for index in range(1, len(token)):
+            if token[index] == token[index - 1]:
+                return token[:index] + token[index + 1:]
+        return token
 
     def _tokens(self, normalized: str) -> list[str]:
         return re.findall(r"[a-z0-9']+", normalized)
@@ -150,6 +183,12 @@ class InputClassifier:
             "contains_farewell": any(token in self.farewell_terms for token in tokens) or "see you" in normalized or "see ya" in normalized,
             "contains_politeness": bool(re.search(r"\b(please|thanks|thank you|appreciate)\b", normalized)),
             "starts_with_social_opener": first in self.social_openers,
+            "contains_addressed_social_request": bool(
+                re.search(
+                    r"\b(?:say|tell|greet)\s+(?:hello|hi|hey|good morning|good afternoon|good evening)\s+to\s+\w+",
+                    normalized,
+                )
+            ),
         }
 
     def _score_social(self, normalized: str, tokens: list[str], features: dict[str, Any]) -> float:
@@ -157,6 +196,9 @@ class InputClassifier:
 
         if features["contains_social_pattern"]:
             score += 0.45
+
+        if features["contains_addressed_social_request"]:
+            score -= 0.38
 
         if features["contains_greeting"]:
             score += 0.24
@@ -233,6 +275,9 @@ class InputClassifier:
 
         if features["starts_with_command_verb"]:
             score += 0.30
+
+        if features["contains_addressed_social_request"]:
+            score += 0.34
 
         if normalized.startswith(("please ", "can you ", "could you ", "would you ")):
             score += 0.12
@@ -351,6 +396,8 @@ class InputClassifier:
                 reasons.append("task_verb_detected")
             if features["contains_direct_object_marker"]:
                 reasons.append("task_object_detected")
+            if features["contains_addressed_social_request"]:
+                reasons.append("addressed_social_command_detected")
 
         elif input_type == "claim":
             if features["contains_claim_marker"]:
@@ -373,3 +420,5 @@ class InputClassifier:
             reasons.append("close_category_competition")
 
         return reasons
+
+

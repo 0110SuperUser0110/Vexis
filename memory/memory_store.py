@@ -49,6 +49,12 @@ class MemoryStore:
         items.append(record.__dict__)
         self._write_json_list(self.memories_path, items)
 
+    def replace_memories(self, records: list[MemoryRecord]) -> None:
+        self._write_json_list(
+            self.memories_path,
+            [record.__dict__ for record in records],
+        )
+
     def save_task(self, record: TaskRecord) -> None:
         items = self._read_json_list(self.tasks_path)
         items.append(record.__dict__)

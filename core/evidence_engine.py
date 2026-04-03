@@ -114,6 +114,7 @@ class EvidenceEngine:
         source_type = (source_type or "unknown").lower()
 
         weights = {
+            "axiomatic_methodology": 0.82,
             "peer_reviewed_journal": 0.62,
             "preprint": 0.42,
             "official_record": 0.55,
@@ -137,6 +138,7 @@ class EvidenceEngine:
     def _single_source_confidence_cap(self, source_type: str) -> float:
         source_type = (source_type or "unknown").lower()
         caps = {
+            "axiomatic_methodology": 0.88,
             "peer_reviewed_journal": 0.58,
             "preprint": 0.42,
             "official_record": 0.52,
